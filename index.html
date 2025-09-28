@@ -24,7 +24,6 @@
             padding: 0 20px;
         }
         
-        /* Fejléc */
         header {
             background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white;
@@ -46,7 +45,6 @@
             color: #ecf0f1;
         }
         
-        /* Slideshow */
         .slideshow {
             max-width: 800px;
             height: 400px;
@@ -71,7 +69,6 @@
             opacity: 1;
         }
         
-        /* Rendezvény célja */
         .event-purpose {
             background-color: white;
             padding: 40px;
@@ -86,7 +83,6 @@
             text-align: center;
         }
         
-        /* Felülnézeti alaprajz */
         .overview {
             background-color: white;
             padding: 40px;
@@ -179,7 +175,6 @@
             background-color: #2980b9;
         }
         
-        /* Céglista */
         .company-list {
             background-color: white;
             padding: 40px;
@@ -284,7 +279,6 @@
             border-radius: 4px;
         }
         
-        /* Cég bemutatkozások */
         .company-showcase {
             display: none;
             background-color: white;
@@ -346,7 +340,6 @@
             opacity: 1;
         }
         
-        /* Vissza a tetejére gomb */
         #backToTop {
             position: fixed;
             bottom: 30px;
@@ -376,7 +369,6 @@
             background-color: #2980b9;
         }
         
-        /* Reszponzív design */
         @media (max-width: 768px) {
             .welcome {
                 font-size: 2rem;
@@ -449,8 +441,6 @@
             <h1 class="welcome">Üdvözlünk az 1. Mátészalkai SzakmaFeszt oldalán</h1>
             <p class="motto">"A szakma jövője a szakemberek kezében"</p>
             
-            <!-- Slideshow -->
-            <!-- Slideshow a fejlécben (módosított verzió) -->
 <div class="slideshow">
     <div class="slide active" style="background-image: url('HELYSZÍN-SZD-TLA-TJM/Színpad1.jpg');"></div>
 <div class="slide" style="background-image: url('HELYSZÍN-SZD-TLA-TJM/Színpad2.jpg');"></div>
@@ -462,21 +452,17 @@
 </div>
         </div>
     </header>
-    <!-- Slideshow a fejlécben (módosított verzió) -->
 
     <div class="container">
-        <!-- Rendezvény célja -->
         <section class="event-purpose">
             <h2>Rendezvény célja</h2>
             <p>A 1. Mátészalkai SzakmaFeszt célja, hogy összehozza a régió vezető vállalkozásait és szakembereit, lehetőséget teremtve a hálózati kapcsolatok építésére, az innovációk bemutatására és a szakmai tudás megosztására. Az eseményen résztvevő cégek bemutathatják termékeiket, szolgáltatásaikat, továbbá felkelthetik a fiatal tehetségek érdeklődését a szakmájuk iránt.</p>
         </section>
         
-        <!-- Felülnézeti alaprajz -->
         <section class="overview">
             <h2>Kiállító térkép</h2>
             <div class="map-container">
                 <div class="map-background"></div>
-                <!-- Cég pozíciók az alaprajzon -->
                 <div class="company-marker" style="top: 15%; left: 30%;"  data-company="1">DÉ</div>
                 <div class="company-marker" style="top: 15%; left: 40%;"  data-company="2">GÉ</div>
                 <div class="company-marker" style="top: 15%; left: 50%;"  data-company="3">BD</div>
@@ -503,7 +489,6 @@
             
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
-        
         <section class="company-list">
             <h2>Résztvevő cégek</h2>
             <div class="company-item">
@@ -522,8 +507,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Cég 2 -->
             <div class="company-item">
                 <div class="company-logo">B</div>
                 <div class="company-details">
@@ -540,8 +523,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- További 16 cég... -->
             <div class="company-item">
                 <div class="company-logo">C</div>
                 <div class="company-details">
@@ -558,12 +539,7 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- A többi cég helye... (összesen 18) -->
-            
         </section>
-        
-        <!-- Cég bemutatkozások (kezdetben rejtve) -->
         <section class="company-showcase" id="company-1">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
@@ -965,7 +941,6 @@
             
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
-        <!-- További cég bemutatkozások... -->
     </div>
     
    
@@ -975,9 +950,7 @@
 </div>
     <script>
         
-        // Slideshow funkció
         document.addEventListener('DOMContentLoaded', function() {
-            // Fő slideshow
             let slideIndex = 0;
             const slides = document.querySelectorAll('.slide');
             
@@ -990,12 +963,11 @@
                 if (slideIndex > slides.length) { slideIndex = 1; }
                 
                 slides[slideIndex - 1].classList.add('active');
-                setTimeout(showSlides, 5000); // Váltás 5 másodpercenként
+                setTimeout(showSlides, 5000); 
             }
             
             showSlides();
             
-            // Cég bemutató slideshow
             const showcaseSlides = document.querySelectorAll('.showcase-slide');
             let showcaseIndex = 0;
             
@@ -1015,7 +987,6 @@
                 showShowcaseSlides();
             }
             
-            // Cég markerek hover effekt
             const markers = document.querySelectorAll('.company-marker');
             const infoBoxes = document.querySelectorAll('.company-info');
             
@@ -1025,12 +996,10 @@
                     const infoBox = document.getElementById('info-' + companyId);
                     
                     if (infoBox) {
-                        // Pozícionálás
                         const rect = this.getBoundingClientRect();
                         infoBox.style.top = (rect.top - 120) + 'px';
                         infoBox.style.left = rect.left + 'px';
                         
-                        // Megjelenítés
                         infoBox.classList.add('visible');
                     }
                 });
@@ -1049,21 +1018,17 @@
                     const companySection = document.getElementById('company-' + companyId);
                     
                     if (companySection) {
-                        // Elrejtjük az összes cég sectiót
                         document.querySelectorAll('.company-showcase').forEach(section => {
                             section.classList.remove('active');
                         });
                         
-                        // Megjelenítjük a kiválasztottat
                         companySection.classList.add('active');
                         
-                        // Görgetés a sectionhoz
                         companySection.scrollIntoView({behavior: 'smooth'});
                     }
                 });
             });
             
-            // Vissza a tetejére gomb
             const backToTopBtn = document.getElementById('backToTop');
             
             window.addEventListener('scroll', function() {
@@ -1122,14 +1087,12 @@
         previewImg.src = images[companyId];
         preview.style.display = "block";
 
-        // Pozicionáljuk az egérhez
         preview.style.top = (e.clientY + 15) + "px";
         preview.style.left = (e.clientX + 15) + "px";
       }
     });
 
     marker.addEventListener('mousemove', function(e) {
-      // Mozgás közben is kövesse az egeret
       preview.style.top = (e.clientY + 15) + "px";
       preview.style.left = (e.clientX + 15) + "px";
     });
