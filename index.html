@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Mátészalkai SzakmaFeszt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Fejléc */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .welcome {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .motto {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+        }
+        
+        /* Slideshow */
+        .slideshow {
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto 30px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        /* Rendezvény célja */
+        .event-purpose {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .event-purpose h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Felülnézeti alaprajz */
+        .overview {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .overview h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .map-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="%23d4e6f1"/><path d="M0,0L100,100M100,0L0,100" stroke="%23a8c6e0" stroke-width="0.5"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .company-marker {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e74c3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .company-marker:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .company-info {
+            position: absolute;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            max-width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .company-info.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .company-info h3 {
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .back-to-top:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Céglista */
+        .company-list {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .company-list h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .company-item {
+            display: flex;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        
+        .company-item:last-child {
+            border-bottom: none;
+        }
+        
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+        
+        .company-details {
+            flex: 1;
+        }
+        
+        .company-details h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .company-contact {
+            margin-top: 10px;
+            color: #7f8c8d;
+        }
+        
+        .company-flyer {
+            position: relative;
+            margin-left: 20px;
+        }
+        
+        .flyer-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .flyer-icon:hover {
+            background-color: #2980b9;
+        }
+        
+        .flyer-preview {
+            position: absolute;
+            bottom: 50px;
+            right: 0;
+            width: 200px;
+            height: 280px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .flyer-icon:hover + .flyer-preview,
+        .flyer-preview:hover {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .flyer-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        /* Cég bemutatkozások */
+        .company-showcase {
+            display: none;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .company-showcase.active {
+            display: block;
+        }
+        
+        .showcase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .showcase-logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+        
+        .showcase-details h2 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .showcase-slideshow {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .showcase-slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .showcase-slide.active {
+            opacity: 1;
+        }
+        
+        /* Vissza a tetejére gomb */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        #backToTop.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #backToTop:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Reszponzív design */
+        @media (max-width: 768px) {
+            .welcome {
+                font-size: 2rem;
+            }
+            
+            .motto {
+                font-size: 1.2rem;
+            }
+            
+            .slideshow {
+                height: 300px;
+            }
+            
+            .company-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .company-logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .company-flyer {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .flyer-preview {
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .showcase-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .showcase-logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        .marker-preview {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 380px;
+    background: white;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: none; 
+    z-index: 2000;
+  }
+
+  .marker-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="welcome">Üdvözlünk az 1. Mátészalkai SzakmaFeszt oldalán</h1>
+            <p class="motto">"A szakma jövője a szakemberek kezében"</p>
+            
+            <!-- Slideshow -->
+            <!-- Slideshow a fejlécben (módosított verzió) -->
+<div class="slideshow">
+    <div class="slide active" style="background-image: url('HELYSZÍN-SZD-TLA-TJM/Színpad1.jpg');"></div>
+<div class="slide" style="background-image: url('HELYSZÍN-SZD-TLA-TJM/Színpad2.jpg');"></div>
+<div class="slide" style="background-image: url('HELYSZÍN-SZD-TLA-TJM/Tömeg3.jpg');"></div>
+<div class="slide" style="background-image: url('HELYSZÍN-SZD-TLA-TJM/Tömeg5.jpg');"></div>
+<div class="slide" style="background-image: url('HELYSZÍN-SZD-TLA-TJM/Tömeg4.jpg');"></div>
+<div class="slide" style="background-image: url('HELYSZÍN-SZD-TLA-TJM/Tömeg1.jpg');"></div>
+
+</div>
+        </div>
+    </header>
+    <!-- Slideshow a fejlécben (módosított verzió) -->
+
+    <div class="container">
+        <!-- Rendezvény célja -->
+        <section class="event-purpose">
+            <h2>Rendezvény célja</h2>
+            <p>A 1. Mátészalkai SzakmaFeszt célja, hogy összehozza a régió vezető vállalkozásait és szakembereit, lehetőséget teremtve a hálózati kapcsolatok építésére, az innovációk bemutatására és a szakmai tudás megosztására. Az eseményen résztvevő cégek bemutathatják termékeiket, szolgáltatásaikat, továbbá felkelthetik a fiatal tehetségek érdeklődését a szakmájuk iránt.</p>
+        </section>
+        
+        <!-- Felülnézeti alaprajz -->
+        <section class="overview">
+            <h2>Kiállító térkép</h2>
+            <div class="map-container">
+                <div class="map-background"></div>
+                <!-- Cég pozíciók az alaprajzon -->
+                <div class="company-marker" style="top: 15%; left: 30%;"  data-company="1">DÉ</div>
+                <div class="company-marker" style="top: 15%; left: 40%;"  data-company="2">GÉ</div>
+                <div class="company-marker" style="top: 15%; left: 50%;"  data-company="3">BD</div>
+                <div class="company-marker" style="top: 15%; left: 60%;"  data-company="4">ESZ</div>
+                <div class="company-marker" style="top: 40%; left: 35%;"  data-company="5">SZA</div>
+                <div class="company-marker" style="top: 40%; left: 45%;" data-company="6">NO</div>
+                <div class="company-marker" style="top: 40%; left: 55%;" data-company="7">RE</div>
+                <div class="company-marker" style="top: 75%; left: 30%;" data-company="8">BA</div>
+                <div class="company-marker" style="top: 75%; left: 45%;" data-company="9">HO</div>
+                <div class="company-marker" style="top: 75%; left: 55%;" data-company="10">PA</div>
+                <div class="company-marker" style="top: 50%; left: 55%;"  data-company="11">VÉ</div>
+                <div class="company-marker" style="top: 45%; left: 15%;" data-company="12">TŰ</div>
+                <div class="company-marker" style="top: 75%; left: 40%;" data-company="13">MSG</div>
+                <div class="company-marker" style="top: 75%; left: 60%;" data-company="14">ZE</div>
+                <div class="company-marker" style="top: 45%; left: 80%;" data-company="15">SZP</div>
+                <div class="company-marker" style="top: 60%; left: 15%;" data-company="16">RE²</div>
+                <div class="company-marker" style="top: 75%; left: 35%;" data-company="17">MC</div>
+                <div class="company-marker" style="top: 75%; left: 50%;" data-company="18">PÖ</div>
+                <div class="company-marker" style="top: 50%; left: 35%;" data-company="19">MU</div>
+                <div class="company-marker" style="top: 50%; left: 45%;" data-company="20">MOM</div>
+               
+               
+            </div>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        
+        <section class="company-list">
+            <h2>Résztvevő cégek</h2>
+            <div class="company-item">
+                <div class="company-logo">A</div>
+                <div class="company-details">
+                    <h3>Alpha Kft.</h3>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <div class="company-contact">
+                        <p>Kovács István | +36 30 123 4567 | info@alpha.hu</p>
+                    </div>
+                </div>
+                <div class="company-flyer">
+                    <div class="flyer-icon">💼</div>
+                    <div class="flyer-preview">
+                        <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cég 2 -->
+            <div class="company-item">
+                <div class="company-logo">B</div>
+                <div class="company-details">
+                    <h3>Beta Zrt.</h3>
+                    <p>Mátészalka, Ipari Park 5.</p>
+                    <div class="company-contact">
+                        <p>Nagy Eszter | +36 70 234 5678 | kapcsolat@beta.zrt</p>
+                    </div>
+                </div>
+                <div class="company-flyer">
+                    <div class="flyer-icon">💼</div>
+                    <div class="flyer-preview">
+                        <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Corporate brochure with technology solutions&id=5" alt="Beta Zrt. szórólapja">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- További 16 cég... -->
+            <div class="company-item">
+                <div class="company-logo">C</div>
+                <div class="company-details">
+                    <h3>Gamma Kft.</h3>
+                    <p>Mátészalka, Kossuth út 8.</p>
+                    <div class="company-contact">
+                        <p>Szabó Péter | +36 20 345 6789 | info@gamma.hu</p>
+                    </div>
+                </div>
+                <div class="company-flyer">
+                    <div class="flyer-icon">💼</div>
+                    <div class="flyer-preview">
+                        <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Business brochure with industrial equipment&id=6" alt="Gamma Kft. szórólapja">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- A többi cég helye... (összesen 18) -->
+            
+        </section>
+        
+        <!-- Cég bemutatkozások (kezdetben rejtve) -->
+        <section class="company-showcase" id="company-1">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Déri.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('de1.jpg');"></div>
+                <div class="showcase-slide" style="background-image: url('de2.jpg');"></div>
+                <div class="showcase-slide" style="background-image: url('de3.jpg');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-2">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Gépészeti.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-3">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Budai.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-4">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Esze.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-5">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Szatmár optika.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-6">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Nobilisz.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-7">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Rendőrség.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-8">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Baros.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-9">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Hoya.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-10">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Parmen.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-11">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Végrehajtás.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-12">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Tűzoltó.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-13">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>MSG.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-14">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Zeiss.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-15">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Alpha Kft.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-16">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Rendőrség.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-17">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>McDonalds.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <section class="company-showcase" id="company-18">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Pötyös.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section><section class="company-showcase" id="company-19">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>Munka.hu.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        </section><section class="company-showcase" id="company-20">
+            <div class="showcase-header">
+                <div class="showcase-logo">A</div>
+                <div class="showcase-details">
+                    <h2>MOM.</h2>
+                    <p>Mátészalka, Fő út 12.</p>
+                    <p>Minőség és megbízhatóság</p>
+                </div>
+            </div>
+            
+            <div class="showcase-slideshow">
+                <div class="showcase-slide active" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Modern office space with employees working&id=7');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=High-tech manufacturing facility with machinery&id=8');"></div>
+                <div class="showcase-slide" style="background-image: url('https://placeholder-image-service.onrender.com/image/800x400?prompt=Team meeting in a conference room&id=9');"></div>
+            </div>
+            
+            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            
+            
+            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
+        </section>
+        <!-- További cég bemutatkozások... -->
+    </div>
+    
+   
+    <a href="#" id="backToTop">↑</a>
+    <div class="marker-preview" id="markerPreview">
+  <img src="" alt="Cég előnézet">
+</div>
+    <script>
+        
+        // Slideshow funkció
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fő slideshow
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.slide');
+            
+            function showSlides() {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove('active');
+                }
+                
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1; }
+                
+                slides[slideIndex - 1].classList.add('active');
+                setTimeout(showSlides, 5000); // Váltás 5 másodpercenként
+            }
+            
+            showSlides();
+            
+            // Cég bemutató slideshow
+            const showcaseSlides = document.querySelectorAll('.showcase-slide');
+            let showcaseIndex = 0;
+            
+            function showShowcaseSlides() {
+                for (let i = 0; i < showcaseSlides.length; i++) {
+                    showcaseSlides[i].classList.remove('active');
+                }
+                
+                showcaseIndex++;
+                if (showcaseIndex > showcaseSlides.length) { showcaseIndex = 1; }
+                
+                showcaseSlides[showcaseIndex - 1].classList.add('active');
+                setTimeout(showShowcaseSlides, 4000);
+            }
+            
+            if (showcaseSlides.length > 0) {
+                showShowcaseSlides();
+            }
+            
+            // Cég markerek hover effekt
+            const markers = document.querySelectorAll('.company-marker');
+            const infoBoxes = document.querySelectorAll('.company-info');
+            
+            markers.forEach(marker => {
+                marker.addEventListener('mouseover', function() {
+                    const companyId = this.getAttribute('data-company');
+                    const infoBox = document.getElementById('info-' + companyId);
+                    
+                    if (infoBox) {
+                        // Pozícionálás
+                        const rect = this.getBoundingClientRect();
+                        infoBox.style.top = (rect.top - 120) + 'px';
+                        infoBox.style.left = rect.left + 'px';
+                        
+                        // Megjelenítés
+                        infoBox.classList.add('visible');
+                    }
+                });
+                
+                marker.addEventListener('mouseout', function() {
+                    const companyId = this.getAttribute('data-company');
+                    const infoBox = document.getElementById('info-' + companyId);
+                    
+                    if (infoBox) {
+                        infoBox.classList.remove('visible');
+                    }
+                });
+                
+                marker.addEventListener('click', function() {
+                    const companyId = this.getAttribute('data-company');
+                    const companySection = document.getElementById('company-' + companyId);
+                    
+                    if (companySection) {
+                        // Elrejtjük az összes cég sectiót
+                        document.querySelectorAll('.company-showcase').forEach(section => {
+                            section.classList.remove('active');
+                        });
+                        
+                        // Megjelenítjük a kiválasztottat
+                        companySection.classList.add('active');
+                        
+                        // Görgetés a sectionhoz
+                        companySection.scrollIntoView({behavior: 'smooth'});
+                    }
+                });
+            });
+            
+            // Vissza a tetejére gomb
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+            
+            document.querySelectorAll('.back-to-top').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
+            });
+        });
+          const markers = document.querySelectorAll('.company-marker');
+  const preview = document.getElementById('markerPreview');
+  const previewImg = preview.querySelector('img');
+
+  markers.forEach(marker => {
+    marker.addEventListener('mouseenter', function(e) {
+      const companyId = this.getAttribute('data-company');
+
+      const images = {
+        1: "bemutató2.jpg",
+        2: "gepesz.jpg",
+        3: "bd.jpg",
+        4: "sze.jpg",
+        5: "sza.jpg",
+        6: "no.jpg",
+        7: "re.jpg",
+        8: "ba.jpg",
+        9: "ho.jpg",
+        10: "pa.jpg",
+        11: "ve.jpg",
+        12: "tu.jpg",
+        13: "msg.jpg",
+        14: "ze.jpg",
+        15: "szp.jpg",
+        16: "re2.jpg",
+        17: "mc.jpg",
+        18: "pö.jpg",
+        19: "mu.jpg",
+        20: "mom.jpg",
+        
+      };
+
+      if (images[companyId]) {
+        previewImg.src = images[companyId];
+        preview.style.display = "block";
+
+        // Pozicionáljuk az egérhez
+        preview.style.top = (e.clientY + 15) + "px";
+        preview.style.left = (e.clientX + 15) + "px";
+      }
+    });
+
+    marker.addEventListener('mousemove', function(e) {
+      // Mozgás közben is kövesse az egeret
+      preview.style.top = (e.clientY + 15) + "px";
+      preview.style.left = (e.clientX + 15) + "px";
+    });
+
+    marker.addEventListener('mouseleave', function() {
+      preview.style.display = "none";
+    });
+  });
+  
+    </script>
+</body>
+</html>
