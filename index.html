@@ -9,12 +9,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #1a1525;
+            color: #e2d9f3;
             line-height: 1.6;
         }
         
@@ -25,24 +25,29 @@
         }
         
         header {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: linear-gradient(135deg, #2d1b4e, #4a2a7a, #2d1b4e);
             color: white;
             text-align: center;
             padding: 40px 20px;
             position: relative;
+            box-shadow: 0 4px 20px rgba(45, 27, 78, 0.5);
+            border-bottom: 1px solid #5a3a8a;
         }
         
         .welcome {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 15px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
         
         .motto {
             font-size: 1.5rem;
             font-style: italic;
             margin-bottom: 30px;
-            color: #ecf0f1;
+            color: #c9b8ff;
+            font-weight: 300;
         }
         
         .slideshow {
@@ -50,9 +55,10 @@
             height: 400px;
             margin: 0 auto 30px;
             position: relative;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border: 1px solid #5a3a8a;
         }
         
         .slide {
@@ -70,57 +76,64 @@
         }
         
         .event-purpose {
-            background-color: white;
+            background-color: #2a2039;
             padding: 40px;
-            border-radius: 8px;
+            border-radius: 12px;
             margin: 40px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-left: 5px solid #6d4cbc;
+            border: 1px solid #3a2d4e;
         }
         
         .event-purpose h2 {
-            color: #2c3e50;
+            color: #b39eff;
             margin-bottom: 20px;
             text-align: center;
+            font-weight: 600;
         }
         
         .overview {
-            background-color: white;
+            background-color: #2a2039;
             padding: 40px;
-            border-radius: 8px;
+            border-radius: 12px;
             margin: 40px 0;
             position: relative;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-left: 5px solid #6d4cbc;
+            border: 1px solid #3a2d4e;
         }
         
         .overview h2 {
-            color: #2c3e50;
+            color: #b39eff;
             margin-bottom: 30px;
             text-align: center;
+            font-weight: 600;
         }
         
         .map-container {
             position: relative;
             width: 100%;
             height: 500px;
-            background-color: #e8f4f8;
-            border-radius: 8px;
+            background-color: #231b30;
+            border-radius: 12px;
             overflow: hidden;
+            border: 1px solid #3a2d4e;
         }
         
         .map-background {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="%23d4e6f1"/><path d="M0,0L100,100M100,0L0,100" stroke="%23a8c6e0" stroke-width="0.5"/></svg>');
-            opacity: 0.3;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="%23231b30"/><path d="M0,0L100,100M100,0L0,100" stroke="%233a2d4e" stroke-width="0.5"/></svg>');
+            opacity: 0.5;
         }
         
         .company-marker {
             position: absolute;
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
-            background-color: #e74c3c;
+            background: linear-gradient(135deg, #6d4cbc, #5a3a8a);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -128,25 +141,30 @@
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 8px rgba(106, 76, 147, 0.5);
+            border: 2px solid #8a6bd6;
         }
         
         .company-marker:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(138, 107, 214, 0.6);
+            background: linear-gradient(135deg, #7d5ccc, #6d4cbc);
         }
         
         .company-info {
             position: absolute;
-            background: white;
+            background: #2a2039;
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
             z-index: 100;
             max-width: 250px;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
+            border-left: 3px solid #6d4cbc;
+            color: #e2d9f3;
+            border: 1px solid #3a2d4e;
         }
         
         .company-info.visible {
@@ -156,44 +174,59 @@
         
         .company-info h3 {
             margin-bottom: 8px;
-            color: #2c3e50;
+            color: #b39eff;
         }
         
         .back-to-top {
             display: block;
             text-align: center;
             margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #3498db;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #6d4cbc, #5a3a8a);
             color: white;
             text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: 1px solid #7d5ccc;
         }
         
         .back-to-top:hover {
-            background-color: #2980b9;
+            background: linear-gradient(135deg, #7d5ccc, #6d4cbc);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(109, 76, 188, 0.4);
         }
         
         .company-list {
-            background-color: white;
+            background-color: #2a2039;
             padding: 40px;
-            border-radius: 8px;
+            border-radius: 12px;
             margin: 40px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-left: 5px solid #6d4cbc;
+            border: 1px solid #3a2d4e;
         }
         
         .company-list h2 {
-            color: #2c3e50;
+            color: #b39eff;
             margin-bottom: 30px;
             text-align: center;
+            font-weight: 600;
         }
         
         .company-item {
             display: flex;
             padding: 20px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #3a2d4e;
             align-items: center;
+            transition: all 0.3s;
+            border-radius: 8px;
+        }
+        
+        .company-item:hover {
+            background-color: #332845;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
         }
         
         .company-item:last-child {
@@ -209,9 +242,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #6d4cbc, #5a3a8a);
             font-weight: bold;
-            color: #7f8c8d;
+            color: white;
+            font-size: 1.5rem;
+            border: 1px solid #7d5ccc;
         }
         
         .company-details {
@@ -219,13 +254,14 @@
         }
         
         .company-details h3 {
-            color: #2c3e50;
+            color: #b39eff;
             margin-bottom: 5px;
+            font-weight: 600;
         }
         
         .company-contact {
             margin-top: 10px;
-            color: #7f8c8d;
+            color: #a294c7;
         }
         
         .company-flyer {
@@ -236,7 +272,7 @@
         .flyer-icon {
             width: 40px;
             height: 40px;
-            background-color: #3498db;
+            background: linear-gradient(135deg, #6d4cbc, #5a3a8a);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -244,10 +280,12 @@
             color: white;
             cursor: pointer;
             transition: all 0.3s ease;
+            border: 1px solid #7d5ccc;
         }
         
         .flyer-icon:hover {
-            background-color: #2980b9;
+            background: linear-gradient(135deg, #7d5ccc, #6d4cbc);
+            transform: scale(1.1);
         }
         
         .flyer-preview {
@@ -256,14 +294,15 @@
             right: 0;
             width: 200px;
             height: 280px;
-            background-color: white;
+            background-color: #2a2039;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
             padding: 10px;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 100;
+            border: 1px solid #3a2d4e;
         }
         
         .flyer-icon:hover + .flyer-preview,
@@ -281,15 +320,23 @@
         
         .company-showcase {
             display: none;
-            background-color: white;
+            background-color: #2a2039;
             padding: 40px;
-            border-radius: 8px;
+            border-radius: 12px;
             margin: 40px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-left: 5px solid #6d4cbc;
+            border: 1px solid #3a2d4e;
         }
         
         .company-showcase.active {
             display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .showcase-header {
@@ -307,14 +354,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #6d4cbc, #5a3a8a);
             font-weight: bold;
-            color: #7f8c8d;
+            color: white;
+            font-size: 2rem;
+            border: 1px solid #7d5ccc;
         }
         
         .showcase-details h2 {
-            color: #2c3e50;
+            color: #b39eff;
             margin-bottom: 5px;
+            font-weight: 600;
         }
         
         .showcase-slideshow {
@@ -324,6 +374,7 @@
             margin-bottom: 30px;
             border-radius: 8px;
             overflow: hidden;
+            border: 1px solid #3a2d4e;
         }
         
         .showcase-slide {
@@ -346,18 +397,19 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background-color: #3498db;
+            background: linear-gradient(135deg, #6d4cbc, #5a3a8a);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 10px rgba(109, 76, 188, 0.5);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 1000;
+            border: 1px solid #7d5ccc;
         }
         
         #backToTop.visible {
@@ -366,7 +418,9 @@
         }
         
         #backToTop:hover {
-            background-color: #2980b9;
+            background: linear-gradient(135deg, #7d5ccc, #6d4cbc);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(109, 76, 188, 0.6);
         }
         
         @media (max-width: 768px) {
@@ -413,64 +467,168 @@
                 margin-bottom: 15px;
             }
         }
+        
         .marker-preview {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 450px;
-    height: 380px;
-    background: white;
-    border: 2px solid #3498db;
-    border-radius: 8px;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 450px;
+            height: 380px;
+            background: #2a2039;
+            border: 2px solid #6d4cbc;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(109, 76, 188, 0.4);
+            overflow: hidden;
+            display: none; 
+            z-index: 2000;
+        }
+
+        .marker-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .showcase-gallery {
+            display: flex;
+            gap: 10px; 
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .showcase-gallery img {
+            width: 400px;   
+            height: 250px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            border: 1px solid #3a2d4e;
+        }
+
+        .showcase-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(109, 76, 188, 0.3);
+        }
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.7);
+        }
+        
+        h1, h2, h3 {
+            color: #b39eff;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #6d4cbc, #8a6bd6);
+            border-radius: 3px;
+        }
+        
+        p {
+            color: #d0c5e8;
+        }
+.company-list {
+    background-color: #2a2039;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    overflow: hidden;
-    display: none; 
-    z-index: 2000;
-  }
+    border-left: 5px solid #6d4cbc;
+    border: 1px solid #3a2d4e;
+    transition: all 0.3s ease;
+}
 
-  .marker-preview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .showcase-gallery {
+.company-list-header {
     display: flex;
-    gap: 10px; 
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-.showcase-gallery img {
-    width: 400px;   
-    height: 250px;
-    object-fit: cover;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.3s;
-}
-
-.showcase-gallery img:hover {
-    transform: scale(1.05);
-}
-
-#lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    cursor: pointer;
+    padding: 10px 0;
 }
 
-#lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 5px;
+.company-list-header h2 {
+    color: #b39eff;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.arrow-icon {
+    font-size: 24px;
+    color: #b39eff;
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon.down {
+    transform: rotate(0deg);
+}
+
+.arrow-icon.up {
+    transform: rotate(180deg);
+}
+
+.company-list-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.company-list-content.expanded {
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.company-item {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #3a2d4e;
+    align-items: center;
+    transition: all 0.3s;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.company-item:hover {
+    background-color: #332845;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.company-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
     </style>
@@ -513,7 +671,7 @@
                 <div class="company-marker" style="top: 75%; left: 30%;" data-company="8">BA</div>
                 <div class="company-marker" style="top: 75%; left: 45%;" data-company="9">HO</div>
                 <div class="company-marker" style="top: 75%; left: 55%;" data-company="10">PA</div>
-                <div class="company-marker" style="top: 50%; left: 55%;"  data-company="11">VÉ</div>
+                <div class="company-marker" style="top: 50%; left: 55%;"  data-company="11">BV</div>
                 <div class="company-marker" style="top: 45%; left: 15%;" data-company="12">TŰ</div>
                 <div class="company-marker" style="top: 75%; left: 40%;" data-company="13">MSG</div>
                 <div class="company-marker" style="top: 75%; left: 60%;" data-company="14">ZE</div>
@@ -528,65 +686,307 @@
             </div>
             
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-list">
-            <h2>Résztvevő cégek</h2>
-            <div class="company-item">
-                <div class="company-logo">A</div>
-                <div class="company-details">
-                    <h3>Alpha Kft.</h3>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <div class="company-contact">
-                        <p>Kovács István | +36 30 123 4567 | info@alpha.hu</p>
-                    </div>
-                </div>
-                <div class="company-flyer">
-                    <div class="flyer-icon">💼</div>
-                    <div class="flyer-preview">
-                        <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
-                    </div>
+<section class="company-list">
+    <div class="company-list-header" id="companyListToggle">
+        <h2 class="section-title">Résztvevő cégek</h2>
+        <div class="arrow-icon down">▼</div>
+    </div>
+    <div class="company-list-content" id="companyListContent">
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Mátészalkai Szakképzési Centrum Gépészeti Technikum és Kollégium.</h3>
+                <p>Mátészalka, Kölcsey u. 12, 4700.</p>
+                <div class="company-contact">
+                    <p>Fejér Gábor Zoltán | +36 44 500 185 | mszgepesz@gmail.com</p>
                 </div>
             </div>
-            <div class="company-item">
-                <div class="company-logo">B</div>
-                <div class="company-details">
-                    <h3>Beta Zrt.</h3>
-                    <p>Mátészalka, Ipari Park 5.</p>
-                    <div class="company-contact">
-                        <p>Nagy Eszter | +36 70 234 5678 | kapcsolat@beta.zrt</p>
-                    </div>
-                </div>
-                <div class="company-flyer">
-                    <div class="flyer-icon">💼</div>
-                    <div class="flyer-preview">
-                        <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Corporate brochure with technology solutions&id=5" alt="Beta Zrt. szórólapja">
-                    </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
                 </div>
             </div>
-            <div class="company-item">
-                <div class="company-logo">C</div>
-                <div class="company-details">
-                    <h3>Gamma Kft.</h3>
-                    <p>Mátészalka, Kossuth út 8.</p>
-                    <div class="company-contact">
-                        <p>Szabó Péter | +36 20 345 6789 | info@gamma.hu</p>
-                    </div>
-                </div>
-                <div class="company-flyer">
-                    <div class="flyer-icon">💼</div>
-                    <div class="flyer-preview">
-                        <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Business brochure with industrial equipment&id=6" alt="Gamma Kft. szórólapja">
-                    </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">B</div>
+            <div class="company-details">
+                <h3>Mátészalkai SzC Déri Miksa Technikum, Szakképző Iskola és Kollégium.</h3>
+                <p>4702 Mátészalka, Baross László utca 9-11.</p>
+                <div class="company-contact">
+                    <p>Májer János Zsolt | +36 44 312 657 | mszc.derimiksa@gmail.com</p>
                 </div>
             </div>
-        </section>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Corporate brochure with technology solutions&id=5" alt="Beta Zrt. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">C</div>
+            <div class="company-details">
+                <h3>Mátészalkai SzC Budai Nagy Antal Technikum és Szakgimnázium.</h3>
+                <p>4320 Nagykálló Korányi Frigyes út 27.</p>
+                <div class="company-contact">
+                    <p>Szabóné Lipkovics Ildikó | +36 42 263 104 | lipkovicsildiko@gmail.com                    </p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Business brochure with industrial equipment&id=6" alt="Gamma Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Északi ASzc Baross László Mezőgazdasági Technikum, Szakképző Iskola és Kollégium.</h3>
+                <p>4700 Mátészalka, Baross László út 12-14.</p>
+                <div class="company-contact">
+                    <p>Kovács István | 30/465-37-54 | baross.titkarsag@easzc.hu</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>McDonald's.</h3>
+                <p>Mátészalka, Alkotmány út 1/A, 4700.</p>
+                <div class="company-contact">
+                    <p>Kis Szabó | munka@kisszabo.hu</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Nobilis.</h3>
+                <p>Mátészalka, Almáskert u. 14, 4700</p>
+                <div class="company-contact">
+                    <p>Novák Tiborné | +36 30 653 8320 | webshop@nobilis.hu </p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Rendőrség.</h3>
+                <p></p>
+                <div class="company-contact">
+                    <p></p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Büntetés-Vágrehajtás.</h3>
+                <p></p>
+                <div class="company-contact">
+                    <p></p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>MOM Zrt.</h3>
+                <p>4700 Mátészalka, Ipari út 16.</p>
+                <div class="company-contact">
+                    <p>HEGYI  Tamás | +36 30 206 5879 | info@momzrt.hu</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Tűzöltóság.</h3>
+                <p></p>
+                <div class="company-contact">
+                    <p></p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Hoya.</h3>
+                <p>Mátészalka, Ipari út 18, 4700.</p>
+                <div class="company-contact">
+                    <p>Jens Kussat | (06 44) 418 200 | HMHU-hoya@hoya.hu</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Hungária Zrt. Mátészalkai Tejüzeme.</h3>
+                <p>Mátészalka, Jármi út 24.</p>
+                <div class="company-contact">
+                    <p>Szautner Péter |  06 40 350 350 | vevoszolgalat@frieslandcampina.com</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>PARMEN Konzervipari Zrt</h3>
+                <p>4722 Nyírmeggyes, Fehér tag 1171/1.</p>
+                <div class="company-contact">
+                    <p>Széll István| +36 44 509 036 | parmenkonzerv@parmen.hu</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>MSG Kft.</h3>
+                <p>4700 Mátészalka, Jármi út 55.</p>
+                <div class="company-contact">
+                    <p>Keresztes László Mihály | +36/44/500-860 | msgkft@msgkft.com</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Carl Zeiss Vision Hungary Kft.</h3>
+                <p>Mátészalka, Ernst Abbe utca 1-2, 4700.</p>
+                <div class="company-contact">
+                    <p>Karaffa Róbert | (06 44) 501 200 | info@alpha.hu</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>munka.hu.</h3>
+                <p>4700 Mátészalka, Jármi utca 2.</p>
+                <div class="company-contact">
+                    <p>Kovács Zoltán | 44/500-622 | mateszalka@szabolcs.gov.hu</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Esze Tamás Gimnázium.</h3>
+                <p> Mátészalka u 4700, Kazinczy u. 7, 4700.</p>
+                <div class="company-contact">
+                    <p>Bétéri Zoltán | (06 44) 502 625 | eszegimi@gmail.com</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+        <div class="company-item">
+            <div class="company-logo">A</div>
+            <div class="company-details">
+                <h3>Szatmár Optikai Kft.</h3>
+                <p>Mátészalka, Curtis utca 1, 4700</p>
+                <div class="company-contact">
+                    <p>Mérész Attila | (06 44) 500 915 | attila.marton@szatmaroptika.hu</p>
+                </div>
+            </div>
+            <div class="company-flyer">
+                <div class="flyer-icon">💼</div>
+                <div class="flyer-preview">
+                    <img src="https://placeholder-image-service.onrender.com/image/200x280?prompt=Company brochure with products and services&id=4" alt="Alpha Kft. szórólapja">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         <section class="company-showcase" id="company-1">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Déri.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Mátészalkai SzC Déri Miksa Technikum, Szakképző Iskola és Kollégium.</h2>
                 </div>
             </div>
             
@@ -596,8 +996,6 @@
                 <img src="de3.jpg" alt="Kép 3">
             </div>
             
-            <p>Az Alpha Kft. 1995 óta működik...</p>
-            
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         
@@ -606,9 +1004,7 @@
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Gépészeti.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Mátészalkai Szakképzési Centrum Gépészeti Technikum és Kollégium.</h2>
                 </div>
             </div>
             
@@ -618,17 +1014,13 @@
                 <img src="ge3.jpg" alt="Kép 3">
             </div>
             
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-3">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Budai.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Mátészalkai SzC Budai Nagy Antal Technikum és Szakgimnázium.</h2>
                 </div>
             </div>
             
@@ -638,17 +1030,13 @@
                 <img src="bd3.jpg" alt="Kép 3">
             </div>
             
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-4">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Esze.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Esze Tamás Gimnázium.</h2>
                 </div>
             </div>
             
@@ -658,17 +1046,13 @@
                 <img src="sze3.jpg" alt="Kép 3">
             </div>
             
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-5">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Szatmár optika.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Szatmár Optikai Kft.</h2>
                 </div>
             </div>
             
@@ -676,8 +1060,14 @@
                 <img src="sza1.jpg" alt="Kép 1">
                 <img src="sza2.jpg" alt="Kép 2">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+<p>
+Igen, a <strong>Szatmár Optikai Kft.</strong> Mátészalkán jelenleg is keres munkavállalókat. 
+A legutóbbi hirdetésben <strong>IT specialista</strong> pozícióra várják a jelentkezőket.
+<br><h3>Elérhető pozíció:</h3><br>
+● IT specialista – informatikai rendszerek karbantartása, támogatás, hálózatfelügyelet
+</p>
+
             
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
@@ -685,9 +1075,7 @@
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Nobilisz.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Nobilis.</h2>
                 </div>
             </div>
             
@@ -695,9 +1083,24 @@
                 <img src="no1.jpg" alt="Kép 1">
                 <img src="no2.jpg" alt="Kép 2">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+<p>
+Jelenleg is elérhetőek munkalehetőségek. A cég folyamatosan keres új munkatársakat különböző pozíciókba.
+<br><h3>Elérhető pozíciók:</h3><br>
+● Élelmiszeripari operátor (betanított munkakör, többműszakos munkarend)<br>
+● Karbantartó / Gépüzemeltető (önálló munkavégzés, hibakeresés és javítás)
+<br><h3>Amit kínálnak:</h3><br>
+● Versenyképes fizetés<br>
+● Stabil, hosszú távú munka<br>
+● Fejlődési és előrelépési lehetőség<br>
+● Támogató, fiatalos csapat
+<br><h3>Elvárások:</h3><br>
+● Minimum középfokú végzettség<br>
+● Fizikai terhelhetőség<br>
+● Önálló munkavégzés<br>
+● Elkötelezettség és megbízhatóság
+</p>
+
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-7">
@@ -705,8 +1108,6 @@
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
                     <h2>Rendőrség.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
                 </div>
             </div>
             
@@ -715,18 +1116,26 @@
                 <img src="re2.jpg" alt="Kép 2">
                 <img src="re3.jpg" alt="Kép 3">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+<p>
+Álláshirdetéseken keresztül lehet érdeklődni. A rendvédelmi területen általánosan elérhető szakirányok a következők:
+<br><h3>Elérhető szakirányok:</h3><br>
+● Rendőr – középiskolai érettségi és megfelelő képzés szükséges<br>
+● Bűnügyi nyomozó – speciális képzés, előny lehet jogi vagy kriminalisztikai háttér<br>
+● Közlekedési rendőr – balesetek kivizsgálása és közlekedési szabályok betartatása<br>
+● Speciális szakértők – pszichológus, jogász, IT- vagy kriminalisztikai szakember
+<br><h3>További információ:</h3><br>
+Aktuális állások megtalálhatók a Magyar Rendőrség és az ÁSZK hivatalos weboldalán, 
+valamint a Mátészalkai Rendőrkapitányságnál.
+</p>
+
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-8">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Baros.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Északi ASzc Baross László Mezőgazdasági Technikum, Szakképző Iskola és Kollégium.</h2>
                 </div>
             </div>
             
@@ -735,8 +1144,6 @@
                 <img src="ba2.jpg" alt="Kép 2">
             </div>
             
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-9">
@@ -744,8 +1151,6 @@
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
                     <h2>Hoya.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
                 </div>
             </div>
             
@@ -754,18 +1159,15 @@
                 <img src="ho2.jpg" alt="Kép 2">
                 <img src="ho3.jpg" alt="Kép 3">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+            <p>A cég több szakterületen keres munkatársakat, pályakezdők jelentkezését is várják.<br><h3>Elérhető pozíciók:</h3><br>●Gépészmérnök<br>●Logisztikai asszisztens<br>●Programozó / Szoftverfejlesztő<br>●HR asszisztens<br>●Termékmenedzser asszisztens</p>
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-10">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Parmen.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>PARMEN Konzervipari Zrt.</h2>
                 </div>
             </div>
             
@@ -774,32 +1176,53 @@
                 <img src="pa2.jpg" alt="Kép 2">
                 <img src="pa3.jpg" alt="Kép 3">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+<p>
+Jelenleg is elérhetőek munkalehetőségek. A cég folyamatosan keres új munkatársakat különböző pozíciókba.
+<br><h3>Elérhető pozíciók:</h3><br>
+● Géplakatos – gépek karbantartása és javítása<br>
+● Villanyszerelő – elektromos rendszerek telepítése és karbantartása<br>
+● Gyártásközi ellenőr – a gyártás minőségének ellenőrzése<br>
+● Raktáros – árukészlet kezelése és raktári adminisztráció
+<br><h3>Elvárások:</h3><br>
+● Középfokú végzettség<br>
+● Három műszakos munkarend vállalása<br>
+● Előnyt jelent élelmiszeripari tapasztalat
+<br><h3>Amit kínálnak:</h3><br>
+● Stabil, hosszú távú munka<br>
+● Versenyképes fizetés<br>
+● Cafetéria és vállalati buszjárat<br>
+● Kihívásokkal teli, felelősségteljes feladatok
+</p>
+
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-11">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Végrehajtás.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Büntetés-Vágrehajtás.</h2>
                 </div>
             </div>
-           
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
+           <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+<p>
+Lehetőség van informatikusként elhelyezkedni (megfelelő végzettséggel).
+<br><h3>Pozíció:</h3><br>
+● Informatikus – informatikai rendszerek kezelése, üzemeltetése és támogatása
+<br><h3>Felvételi folyamat:</h3><br>
+● Előfeltétel: megfelelő végzettség (informatikai végzettség előny)<br>
+● Alkalmassági vizsgák: 4 vizsgálatból álló alkalmassági teszt<br>
+● Ezt követi többlépcsős felvételi eljárás (interjúk, gyakorlati feladatok)
+</p>
+
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
+
         <section class="company-showcase" id="company-12">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Tűzoltó.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Tűzöltóság.</h2>
                 </div>
             </div>
             
@@ -808,18 +1231,22 @@
                 <img src="tu2.jpg" alt="Kép 2">
                 <img src="tu3.jpg" alt="Kép 3">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+<p>
+Jelenleg nincs nyilvános álláshirdetés, de a pozíciók időről időre változnak. 
+Érdemes közvetlenül érdeklődni a kapitányságnál.
+<br><h3>Általános pozíciók:</h3><br>
+● Beosztott tűzoltó – középfokú végzettség és Tűzoltó II. részszakképesítés szükséges (5 hónapos képzés, rendvédelmi alapozó modul)<br>
+● Tűzoltó tiszti pozíciók – érettségi után a Nemzeti Közszolgálati Egyetem BSc/MSc képzésein keresztül
+</p>
+
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-13">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>MSG.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>MSG Kft.</h2>
                 </div>
             </div>
             
@@ -828,43 +1255,36 @@
                 <img src="msg2.jpg" alt="Kép 2">
                 <img src="msg3.jpg" alt="Kép 3">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+            <p>A Mátészalkai Szerelvénygyártó Kft. (MSG Kft.) jelenleg több munkakörbe is keres munkavállalókat.A cég versenyképes fizetést biztosít, valamint támogató, családias munkahelyi légkört kínál. A jelentkezéshez előnyt jelent a szakmai tapasztalat, de pályakezdők jelentkezését is szívesen várják.
+<br><h3>Elérhető pozíciók:</h3><br>●Esztergályos<br>●CNC esztergályos<br>●Fémfestő<br>●Lakatos<br>●Termékfejlesztő mérnök</p>
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-14">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Zeiss.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Carl Zeiss Vision Hungary Kft.</h2>
                 </div>
             </div>
-            
-         
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+            <p>Nyáron is van néhány lehetőség, például raktári munka.
+El lehet helyezkedni; a szabad pozíciók elérhetők az interneten vagy a Munkalandon keresztül.</p>
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-15">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Alpha Kft.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Rendezvény helyszíne.</h2>
                 </div>
             </div>
             
             <div class="showcase-gallery">
-                <img src="szp1.jpg" alt="Kép 1">
-                <img src="szp2.jpg" alt="Kép 2">
-                <img src="szp3.jpg" alt="Kép 3">
+                <img src="Színpad1.jpg" alt="Kép 1">
+                <img src="Tömeg3.jpg" alt="Kép 2">
+                <img src="Tömeg1.jpg" alt="Kép 3">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
             
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
@@ -873,8 +1293,6 @@
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
                     <h2>Rendőrség.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
                 </div>
             </div>
             
@@ -883,18 +1301,26 @@
                 <img src="rek2.jpg" alt="Kép 2">
                 <img src="rek3.jpg" alt="Kép 3">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+<p>
+Álláshirdetéseken keresztül lehet érdeklődni. A rendvédelmi területen általánosan elérhető szakirányok a következők:
+<br><h3>Elérhető szakirányok:</h3><br>
+● Rendőr – középiskolai érettségi és megfelelő képzés szükséges<br>
+● Bűnügyi nyomozó – speciális képzés, előny lehet jogi vagy kriminalisztikai háttér<br>
+● Közlekedési rendőr – balesetek kivizsgálása és közlekedési szabályok betartatása<br>
+● Speciális szakértők – pszichológus, jogász, IT- vagy kriminalisztikai szakember
+<br><h3>További információ:</h3><br>
+Aktuális állások megtalálhatók a Magyar Rendőrség és az ÁSZK hivatalos weboldalán, 
+valamint a Mátészalkai Rendőrkapitányságnál.
+</p>
+
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-17">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>McDonalds.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>McDonald's.</h2>
                 </div>
             </div>
             
@@ -903,18 +1329,16 @@
                 <img src="mc2.jpg" alt="Kép 2">
                 <img src="mc3.jpg" alt="Kép 3">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+            <p>Igen, az étteremben jelenleg is elérhetőek munkalehetőségek, ami több pozícióra keres munkavállalókat.<br><h3>Elérhető pozíciók:</h3><br>●Éttermunkatárs<br>●Éjszakás dolgozó<br>●Műszakvezető<br><h3>Juttatások:</h3><br>●Bruttó 1 900 Ft/óra + műszak- és ünnepnapi pótlék<br>●Ingyenes munkaruha, személyzeti fogyasztás, 20% vásárlási kedvezmény<br>●Rugalmas munkaidő, hosszútávú, bejelentett munka<br>●Bónuszok és karrierlehetőség
+            <br><h3>Elvárások:</h3><br>●Minimum középiskolai végzettség<br>●Rugalmasság, elkötelezettség, jó kommunikáció<br>●Tanulási hajlandóság; vendéglátásban szerzett tapasztalat előny, de nem feltétel</p>
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         <section class="company-showcase" id="company-18">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>Pötyös.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>Hungária Zrt. Mátészalkai Tejüzeme.</h2>
                 </div>
             </div>
             
@@ -923,42 +1347,39 @@
                 <img src="po2.jpg" alt="Kép 2">
                 <img src="po3.jpg" alt="Kép 3">
             </div>
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section><section class="company-showcase" id="company-19">
-            <div class="showcase-header">
-                <div class="showcase-logo">A</div>
-                <div class="showcase-details">
-                    <h2>Munka.hu.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
-                </div>
-            </div>
-            
-            
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+<p>
+A híres Pöttyös Túró Rudi is készül itt, és jelenleg is elérhetőek munkalehetőségek. 
+A cég folyamatosan keres új munkatársakat különböző pozíciókba.
+<br><h3>Elérhető pozíciók:</h3><br>
+● Élelmiszeripari gépkezelő – gépek kezelése, beállítása, karbantartása<br>
+● Betanított munkás – termelés támogatása, csomagolás<br>
+● Karbantartó – gépek karbantartása, javítása<br>
+● Raktáros – árukészlet kezelése, raktári adminisztráció
+<br><h3>Amit kínálnak:</h3><br>
+● Stabil, hosszú távú munka<br>
+● Versenyképes fizetés<br>
+● Fejlődési lehetőség<br>
+● Támogató csapat
+<br><h3>Elvárások:</h3><br>
+● Középfokú végzettség<br>
+● Fizikai terhelhetőség<br>
+● Önálló munkavégzés<br>
+● Elkötelezettség és megbízhatóság
+</p>
+
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         </section><section class="company-showcase" id="company-20">
             <div class="showcase-header">
                 <div class="showcase-logo">A</div>
                 <div class="showcase-details">
-                    <h2>MOM.</h2>
-                    <p>Mátészalka, Fő út 12.</p>
-                    <p>Minőség és megbízhatóság</p>
+                    <h2>MOM Zrt.</h2>
                 </div>
             </div>
-            
-            
-            
-            <p>Az Alpha Kft. 1995 óta működik Mátészalkán, ahol minőségi termékeket gyártanak és szolgáltatásokat nyújtanak. Célunk, hogy ügyfeleink számára megbízható partnerként szolgáljunk, innovatív megoldásokkal segítve növekedésüket.</p>
-            
-            
+            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
+            <p>Jelenleg vannak nyitott munkalehetőségek, elsősorban gépész szakirányban (forgácsolás) és az optikusi területen keresnek szakembereket. Informatikai végzettséggel is van lehetőség elhelyezkedni, azonban ez jelenleg nehezebb, mivel ezen a területen nincs aktív felvétel. 
+A munkahely támogató és családias légkört biztosít, valamint versenyképes bérezést kínál.</p>
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
     </div>
@@ -1138,7 +1559,17 @@ document.querySelectorAll('.showcase-gallery img').forEach(img => {
       preview.style.display = "none";
     });
   });
-  
+document.addEventListener('DOMContentLoaded', function() {
+    const companyListToggle = document.getElementById('companyListToggle');
+    const companyListContent = document.getElementById('companyListContent');
+    const arrowIcon = companyListToggle.querySelector('.arrow-icon');
+
+    companyListToggle.addEventListener('click', function() {
+        companyListContent.classList.toggle('expanded');
+        arrowIcon.classList.toggle('down');
+        arrowIcon.classList.toggle('up');
+    });
+});
     </script>
 </body>
 </html>
