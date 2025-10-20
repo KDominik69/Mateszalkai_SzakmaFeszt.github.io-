@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1. Mátészalkai SzakmaFeszt</title>
     <style>
-        * {
+       * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -16,6 +16,96 @@
             background-color: #1a1525;
             color: #e2d9f3;
             line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Mozgó hátterű gömbök */
+        .background-bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(109, 76, 188, 0.7), rgba(90, 58, 138, 0.3));
+            box-shadow: 0 0 20px rgba(109, 76, 188, 0.5);
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .bubble:nth-child(1) {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            left: 10%;
+            animation-duration: 20s;
+            animation-delay: 0s;
+        }
+        
+        .bubble:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            top: 70%;
+            left: 80%;
+            animation-duration: 15s;
+            animation-delay: 2s;
+        }
+        
+        .bubble:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            left: 60%;
+            animation-duration: 25s;
+            animation-delay: 4s;
+        }
+        
+        .bubble:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 80%;
+            left: 20%;
+            animation-duration: 18s;
+            animation-delay: 1s;
+        }
+        
+        .bubble:nth-child(5) {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            left: 85%;
+            animation-duration: 12s;
+            animation-delay: 3s;
+        }
+        
+        .bubble:nth-child(6) {
+            width: 90px;
+            height: 90px;
+            top: 60%;
+            left: 5%;
+            animation-duration: 22s;
+            animation-delay: 5s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            50% {
+                transform: translateY(-10px) translateX(20px);
+            }
+            75% {
+                transform: translateY(10px) translateX(-10px);
+            }
         }
         
         .container {
@@ -25,13 +115,14 @@
         }
         
         header {
-            background: linear-gradient(135deg, #2d1b4e, #4a2a7a, #2d1b4e);
+            background: linear-gradient(135deg, rgba(45, 27, 78, 0.673), rgba(74, 42, 122, 0.673), rgba(45, 27, 78, 0.673));
             color: white;
             text-align: center;
             padding: 40px 20px;
             position: relative;
             box-shadow: 0 4px 20px rgba(45, 27, 78, 0.5);
             border-bottom: 1px solid #5a3a8a;
+            backdrop-filter: blur(5px);
         }
         
         .welcome {
@@ -40,6 +131,9 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
             font-weight: 700;
             letter-spacing: -0.5px;
+            background: linear-gradient(45deg, #b39eff, #8a6bd6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .motto {
@@ -76,13 +170,14 @@
         }
         
         .event-purpose {
-            background-color: #2a2039;
+            background-color: rgba(42, 32, 57, 0.85);
             padding: 40px;
             border-radius: 12px;
             margin: 40px 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             border-left: 5px solid #6d4cbc;
             border: 1px solid #3a2d4e;
+            backdrop-filter: blur(5px);
         }
         
         .event-purpose h2 {
@@ -93,7 +188,7 @@
         }
         
         .overview {
-            background-color: #2a2039;
+            background-color: rgba(42, 32, 57, 0.85);
             padding: 40px;
             border-radius: 12px;
             margin: 40px 0;
@@ -101,6 +196,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             border-left: 5px solid #6d4cbc;
             border: 1px solid #3a2d4e;
+            backdrop-filter: blur(5px);
         }
         
         .overview h2 {
@@ -114,7 +210,7 @@
             position: relative;
             width: 100%;
             height: 500px;
-            background-color: #231b30;
+            background-color: rgba(35, 27, 48, 0.85);
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #3a2d4e;
@@ -143,6 +239,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 3px 8px rgba(106, 76, 147, 0.5);
             border: 2px solid #8a6bd6;
+            z-index: 10;
         }
         
         .company-marker:hover {
@@ -153,7 +250,7 @@
         
         .company-info {
             position: absolute;
-            background: #2a2039;
+            background: rgba(42, 32, 57, 0.95);
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.4);
@@ -165,6 +262,7 @@
             border-left: 3px solid #6d4cbc;
             color: #e2d9f3;
             border: 1px solid #3a2d4e;
+            backdrop-filter: blur(5px);
         }
         
         .company-info.visible {
@@ -198,20 +296,56 @@
         }
         
         .company-list {
-            background-color: #2a2039;
-            padding: 40px;
+            background-color: rgba(42, 32, 57, 0.85);
+            padding: 30px;
             border-radius: 12px;
             margin: 40px 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             border-left: 5px solid #6d4cbc;
             border: 1px solid #3a2d4e;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
         }
         
-        .company-list h2 {
+        .company-list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px 0;
+        }
+        
+        .company-list-header h2 {
             color: #b39eff;
-            margin-bottom: 30px;
-            text-align: center;
+            margin-bottom: 0;
             font-weight: 600;
+        }
+        
+        .arrow-icon {
+            font-size: 24px;
+            color: #b39eff;
+            transition: transform 0.3s ease;
+        }
+        
+        .arrow-icon.down {
+            transform: rotate(0deg);
+        }
+        
+        .arrow-icon.up {
+            transform: rotate(180deg);
+        }
+        
+        .company-list-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+        
+        .company-list-content.expanded {
+            max-height: 2000px;
+            opacity: 1;
+            margin-top: 20px;
         }
         
         .company-item {
@@ -221,16 +355,18 @@
             align-items: center;
             transition: all 0.3s;
             border-radius: 8px;
+            margin-bottom: 10px;
         }
         
         .company-item:hover {
-            background-color: #332845;
+            background-color: rgba(51, 40, 69, 0.7);
             transform: translateY(-3px);
             box-shadow: 0 5px 10px rgba(0,0,0,0.2);
         }
         
         .company-item:last-child {
             border-bottom: none;
+            margin-bottom: 0;
         }
         
         .company-logo {
@@ -294,7 +430,7 @@
             right: 0;
             width: 200px;
             height: 280px;
-            background-color: #2a2039;
+            background-color: rgba(42, 32, 57, 0.95);
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.4);
             padding: 10px;
@@ -303,6 +439,7 @@
             transition: all 0.3s ease;
             z-index: 100;
             border: 1px solid #3a2d4e;
+            backdrop-filter: blur(5px);
         }
         
         .flyer-icon:hover + .flyer-preview,
@@ -320,13 +457,14 @@
         
         .company-showcase {
             display: none;
-            background-color: #2a2039;
+            background-color: rgba(42, 32, 57, 0.85);
             padding: 40px;
             border-radius: 12px;
             margin: 40px 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             border-left: 5px solid #6d4cbc;
             border: 1px solid #3a2d4e;
+            backdrop-filter: blur(5px);
         }
         
         .company-showcase.active {
@@ -423,64 +561,20 @@
             box-shadow: 0 5px 15px rgba(109, 76, 188, 0.6);
         }
         
-        @media (max-width: 768px) {
-            .welcome {
-                font-size: 2rem;
-            }
-            
-            .motto {
-                font-size: 1.2rem;
-            }
-            
-            .slideshow {
-                height: 300px;
-            }
-            
-            .company-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .company-logo {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-            
-            .company-flyer {
-                margin-left: 0;
-                margin-top: 15px;
-            }
-            
-            .flyer-preview {
-                right: auto;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .showcase-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .showcase-logo {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-        }
-        
         .marker-preview {
             position: fixed; 
             top: 0;
             left: 0;
             width: 450px;
             height: 380px;
-            background: #2a2039;
+            background: rgba(42, 32, 57, 0.95);
             border: 2px solid #6d4cbc;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(109, 76, 188, 0.4);
             overflow: hidden;
             display: none; 
             z-index: 2000;
+            backdrop-filter: blur(5px);
         }
 
         .marker-preview img {
@@ -558,82 +652,114 @@
         p {
             color: #d0c5e8;
         }
-.company-list {
-    background-color: #2a2039;
-    padding: 30px;
-    border-radius: 12px;
-    margin: 40px 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border-left: 5px solid #6d4cbc;
-    border: 1px solid #3a2d4e;
-    transition: all 0.3s ease;
-}
-
-.company-list-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    padding: 10px 0;
-}
-
-.company-list-header h2 {
-    color: #b39eff;
-    margin-bottom: 0;
-    font-weight: 600;
-}
-
-.arrow-icon {
-    font-size: 24px;
-    color: #b39eff;
-    transition: transform 0.3s ease;
-}
-
-.arrow-icon.down {
-    transform: rotate(0deg);
-}
-
-.arrow-icon.up {
-    transform: rotate(180deg);
-}
-
-.company-list-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.3s ease;
-    opacity: 0;
-}
-
-.company-list-content.expanded {
-    max-height: 2000px;
-    opacity: 1;
-    margin-top: 20px;
-}
-
-.company-item {
-    display: flex;
-    padding: 20px;
-    border-bottom: 1px solid #3a2d4e;
-    align-items: center;
-    transition: all 0.3s;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.company-item:hover {
-    background-color: #332845;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-}
-
-.company-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
+        
+        /* Reszponzív stílusok */
+        @media (max-width: 768px) {
+            .welcome {
+                font-size: 2rem;
+            }
+            
+            .motto {
+                font-size: 1.2rem;
+            }
+            
+            .slideshow {
+                height: 300px;
+            }
+            
+            .company-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .company-logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .company-flyer {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .flyer-preview {
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .showcase-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .showcase-logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .showcase-gallery img {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .marker-preview {
+                width: 90%;
+                height: 300px;
+                left: 5%;
+            }
+            
+            .map-container {
+                height: 400px;
+            }
+            
+            .bubble {
+                display: none; /* Kis képernyőkön elrejtjük a buborékokat a jobb teljesítményért */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .event-purpose, .overview, .company-list, .company-showcase {
+                padding: 20px;
+            }
+            
+            .welcome {
+                font-size: 1.8rem;
+            }
+            
+            .motto {
+                font-size: 1rem;
+            }
+            
+            .slideshow {
+                height: 200px;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .company-marker {
+                width: 35px;
+                height: 35px;
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
+     <div class="background-bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
     <header>
         <div class="container">
             <h1 class="welcome">Üdvözlünk az 1. Mátészalkai SzakmaFeszt oldalán</h1>
