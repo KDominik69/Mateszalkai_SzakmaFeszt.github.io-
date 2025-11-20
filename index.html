@@ -343,10 +343,11 @@
         }
         
         .company-list-content.expanded {
-            max-height: 2000px;
-            opacity: 1;
-            margin-top: 20px;
-        }
+    max-height: 9999px;
+    opacity: 1;
+    margin-top: 20px;
+}
+
         
         .company-item {
             display: flex;
@@ -384,6 +385,16 @@
             font-size: 1.5rem;
             border: 1px solid #7d5ccc;
         }
+
+        .company-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* teljesen kitölti a dobozt, arányosan */
+    border-radius: 8px; /* ha szeretnéd megtartani a sarkokat */
+}
+
+
+
         
         .company-details {
             flex: 1;
@@ -818,7 +829,9 @@
     </div>
     <div class="company-list-content" id="companyListContent">
         <div class="company-item">
-            <div class="company-logo">GTK</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Mátészalkai Szakképzési Centrum Gépészeti Technikum és Kollégium</h3>
                 <p>Mátészalka, Kölcsey u. 12, 4700.</p>
@@ -833,7 +846,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">DMT</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Mátészalkai SzC Déri Miksa Technikum, Szakképző Iskola és Kollégium</h3>
                 <p>4702 Mátészalka, Baross László utca 9-11.</p>
@@ -850,7 +865,9 @@
         </div>
         
         <div class="company-item">
-            <div class="company-logo">BNA</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Mátészalkai SzC Budai Nagy Antal Technikum és Szakgimnázium</h3>
                 <p>4320 Nagykálló Korányi Frigyes út 27.</p>
@@ -865,7 +882,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">BLM</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Északi ASzc Baross László Mezőgazdasági Technikum, Szakképző Iskola és Kollégium</h3>
                 <p>4700 Mátészalka, Baross László út 12-14.</p>
@@ -880,7 +899,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">Mc</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>McDonald's</h3>
                 <p>Mátészalka, Alkotmány út 1/A, 4700.</p>
@@ -895,7 +916,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">N</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Nobilis Első Hazai Zrt.</h3>
                 <p>Mátészalka, Almáskert u. 14, 4700</p>
@@ -910,7 +933,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">R</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Rendőrség</h3>
                 <p></p>
@@ -924,8 +949,11 @@
                 </a>
             </div>
         </div>
+        
         <div class="company-item">
-            <div class="company-logo">BV</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Büntetés-Vágrehajtás</h3>
                 <p></p>
@@ -940,7 +968,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">MOM</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>MOM Zrt.</h3>
                 <p>4700 Mátészalka, Ipari út 16.</p>
@@ -955,7 +985,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">T</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Tűzoltóság</h3>
                 <p></p>
@@ -970,7 +1002,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">H</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Hoya Zrt.</h3>
                 <p>Mátészalka, Ipari út 18, 4700.</p>
@@ -985,7 +1019,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">HMT</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Hungária Zrt. Mátészalkai Tejüzeme</h3>
                 <p>Mátészalka, Jármi út 24.</p>
@@ -1000,7 +1036,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">PK</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>PARMEN Konzervipari Zrt.</h3>
                 <p>4722 Nyírmeggyes, Fehér tag 1171/1.</p>
@@ -1015,7 +1053,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">MSG</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>MSG Kft.</h3>
                 <p>4700 Mátészalka, Jármi út 55.</p>
@@ -1029,8 +1069,11 @@
                 </a>
             </div>
         </div>
+        
         <div class="company-item">
-            <div class="company-logo">CZV</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Carl Zeiss Vision Hungary Kft.</h3>
                 <p>Mátészalka, Ernst Abbe utca 1-2, 4700.</p>
@@ -1045,7 +1088,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">M</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>munka.hu</h3>
                 <p>4700 Mátészalka, Jármi utca 2.</p>
@@ -1060,7 +1105,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">ETG</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Esze Tamás Gimnázium</h3>
                 <p> Mátészalka u 4700, Kazinczy u. 7, 4700.</p>
@@ -1075,7 +1122,9 @@
             </div>
         </div>
         <div class="company-item">
-            <div class="company-logo">SO</div>
+            <div class="company-logo">
+                <img src="relog.jpg" alt="Rendőrség logó">
+            </div>
             <div class="company-details">
                 <h3>Szatmár Optikai Kft.</h3>
                 <p>Mátészalka, Curtis utca 1, 4700</p>
