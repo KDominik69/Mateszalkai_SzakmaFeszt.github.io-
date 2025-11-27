@@ -1124,6 +1124,109 @@
 .media-item:nth-child(2) { animation-delay: 0.2s; }
 .media-item:nth-child(3) { animation-delay: 0.3s; }
 .media-item:nth-child(4) { animation-delay: 0.4s; }
+
+.site-footer {
+            background: linear-gradient(135deg, rgba(45, 27, 78, 0.9), rgba(74, 42, 122, 0.9));
+            color: #e2d9f3;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid #5a3a8a;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #b39eff;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .creator-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .creator-link {
+            display: flex;
+            align-items: center;
+            color: #e2d9f3;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .creator-link:hover {
+            background: rgba(109, 76, 188, 0.3);
+            transform: translateX(5px);
+            color: #b39eff;
+        }
+
+        .creator-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-link {
+            color: #e2d9f3;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .social-link:hover {
+            color: #b39eff;
+            border-bottom-color: #b39eff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #3a2d4e;
+            color: #a294c7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .site-footer {
+                padding: 40px 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-section h3 {
+                font-size: 1.2rem;
+            }
+            
+            .creator-link {
+                padding: 6px 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1539,11 +1642,9 @@
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         
-        <!-- További cég bemutatók... -->
         
     </div>
     
-    <!-- Média megjelenések szekció -->
     <section class="media-appearances">
         <div class="container">
             <h2 class="section-title">Média megjelenések</h2>
@@ -1600,8 +1701,51 @@
     <a href="#" id="backToTop">↑</a>
     <div class="marker-preview" id="markerPreview">
         <img src="" alt="Cég előnézet">
+        
     </div>
-    
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kapcsolat</h3>
+                    <p>Mátészalkai SzakmaFeszt</p>
+                    <p>Mátészalka, 4700</p>
+                    <p></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Készítők</h3>
+                    <div class="creator-links">
+                        <a href="https://sites.google.com/view/ita-sb10b/projekt" target="_blank" class="creator-link">
+                            <span class="creator-icon">👨‍💻</span>
+                            Simon Ádám Bence
+                        </a>
+                        <a href="https://sites.google.com/view/ita-sza10b/projekt-sza10b" target="_blank" class="creator-link">
+                            <span class="creator-icon">🎨</span>
+                            Szabó Ákos
+                        </a>
+                        <a href="https://sites.google.com/view/ita-kdj10b/projekt" target="_blank" class="creator-link">
+                            <span class="creator-icon">🚀</span>
+                            Kmetz Dominik
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kövess minket(Jövőbeli)</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘 Facebook</a>
+                        <a href="#" class="social-link">📷 Instagram</a>
+                        <a href="#" class="social-link">📺 YouTube</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 1. Mátészalkai SzakmaFeszt. Minden jog fenntartva.</p>
+            </div>
+        </div>
+    </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let slideIndex = 0;
