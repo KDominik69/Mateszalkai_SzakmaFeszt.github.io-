@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1. Mátészalkai SzakmaFeszt</title>
     <style>
-       * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -20,7 +20,6 @@
             position: relative;
         }
         
-        /*+média megjelenések a végére*/ 
         .background-bubbles {
             position: fixed;
             top: 0;
@@ -343,11 +342,10 @@
         }
         
         .company-list-content.expanded {
-    max-height: 9999px;
-    opacity: 1;
-    margin-top: 20px;
-}
-
+            max-height: 9999px;
+            opacity: 1;
+            margin-top: 20px;
+        }
         
         .company-item {
             display: flex;
@@ -387,14 +385,11 @@
         }
 
         .company-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* teljesen kitölti a dobozt, arányosan */
-    border-radius: 8px; /* ha szeretnéd megtartani a sarkokat */
-}
-
-
-
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
         
         .company-details {
             flex: 1;
@@ -664,6 +659,108 @@
             color: #d0c5e8;
         }
         
+        /* Média megjelenések szekció stílusai */
+        .media-appearances {
+            background-color: rgba(42, 32, 57, 0.85);
+            padding: 60px 0;
+            margin-top: 40px;
+            border-top: 1px solid #3a2d4e;
+        }
+
+        .media-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .media-intro {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .media-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #d0c5e8;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .media-item {
+            background: rgba(35, 27, 48, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid #3a2d4e;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .media-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(109, 76, 188, 0.2);
+        }
+
+        .media-video, .media-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .media-video iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .media-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .media-info {
+            padding: 20px;
+        }
+
+        .media-info h3 {
+            color: #b39eff;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .media-info p {
+            color: #d0c5e8;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .media-date {
+            display: block;
+            color: #8a6bd6;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .media-link {
+            display: inline-block;
+            color: #b39eff;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b39eff;
+            transition: all 0.3s;
+        }
+
+        .media-link:hover {
+            color: #8a6bd6;
+            border-bottom-color: #8a6bd6;
+        }
+        
         @media (max-width: 768px) {
             .welcome {
                 font-size: 2rem;
@@ -726,6 +823,14 @@
             .bubble {
                 display: none; 
             }
+            
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .media-video, .media-image {
+                height: 200px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -758,7 +863,267 @@
                 height: 35px;
                 font-size: 0.8rem;
             }
+            
+            .media-appearances {
+                padding: 40px 0;
+            }
+            
+            .media-content {
+                padding: 0 15px;
+            }
+            
+            .media-info {
+                padding: 15px;
+            }
         }
+        /* Média megjelenések szekció stílusai - KATTINTHATÓ LINK */
+.media-appearances {
+    background-color: rgba(42, 32, 57, 0.85);
+    padding: 60px 0;
+    margin-top: 40px;
+    border-top: 1px solid #3a2d4e;
+}
+
+.media-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.media-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.media-intro p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #d0c5e8;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.media-item {
+    background: rgba(35, 27, 48, 0.7);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 1px solid #3a2d4e;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+}
+
+.media-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(109, 76, 188, 0.3);
+    border-color: #6d4cbc;
+}
+
+.media-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #6d4cbc, #5a3a8a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.media-item:hover .media-image img {
+    transform: scale(1.05);
+}
+
+.media-platform {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    z-index: 2;
+}
+
+.media-platform.facebook {
+    background: #1877F2;
+}
+
+.media-platform.youtube {
+    background: #FF0000;
+}
+
+.media-platform.website {
+    background: #6d4cbc;
+}
+
+.media-platform.news {
+    background: #8a6bd6;
+}
+
+.media-info {
+    padding: 20px;
+}
+
+.media-info h3 {
+    color: #b39eff;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.media-info p {
+    color: #d0c5e8;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.media-date {
+    display: block;
+    color: #8a6bd6;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.media-link {
+    display: inline-block;
+    color: #b39eff;
+    font-weight: 500;
+    border-bottom: 1px solid #b39eff;
+    transition: all 0.3s;
+    padding-bottom: 2px;
+}
+
+.media-item:hover .media-link {
+    color: #8a6bd6;
+    border-bottom-color: #8a6bd6;
+}
+
+/* Placeholder stílusok, ha nincs kép */
+.media-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    background: linear-gradient(135deg, #6d4cbc, #5a3a8a);
+}
+
+.media-placeholder.facebook::before { content: "📘"; }
+.media-placeholder.youtube::before { content: "📺"; }
+.media-placeholder.website::before { content: "🌐"; }
+.media-placeholder.news::before { content: "📰"; }
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #b39eff;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #6d4cbc, #8a6bd6);
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .media-image {
+        height: 180px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .media-intro p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .media-appearances {
+        padding: 40px 0;
+    }
+    
+    .media-content {
+        padding: 0 15px;
+    }
+    
+    .media-info {
+        padding: 15px;
+    }
+    
+    .media-image {
+        height: 160px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .media-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .media-intro p {
+        font-size: 1rem;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.media-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.media-item:nth-child(1) { animation-delay: 0.1s; }
+.media-item:nth-child(2) { animation-delay: 0.2s; }
+.media-item:nth-child(3) { animation-delay: 0.3s; }
+.media-item:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
@@ -775,15 +1140,14 @@
             <h1 class="welcome">Üdvözlünk az 1. Mátészalkai SzakmaFeszt oldalán</h1>
             <p class="motto">"A szakma jövője a szakemberek kezében van."</p>
             
-<div class="slideshow">
-    <div class="slide active" style="background-image: url('Színpad1.jpg');"></div>
-<div class="slide" style="background-image: url('Színpad2.jpg');"></div>
-<div class="slide" style="background-image: url('Tömeg3.jpg');"></div>
-<div class="slide" style="background-image: url('Tömeg5.jpg');"></div>
-<div class="slide" style="background-image: url('Tömeg3.jpg');"></div>
-<div class="slide" style="background-image: url('Tömeg1.jpg');"></div>
-
-</div>
+            <div class="slideshow">
+                <div class="slide active" style="background-image: url('Színpad1.jpg');"></div>
+                <div class="slide" style="background-image: url('Színpad2.jpg');"></div>
+                <div class="slide" style="background-image: url('Tömeg3.jpg');"></div>
+                <div class="slide" style="background-image: url('Tömeg5.jpg');"></div>
+                <div class="slide" style="background-image: url('Tömeg3.jpg');"></div>
+                <div class="slide" style="background-image: url('Tömeg1.jpg');"></div>
+            </div>
         </div>
     </header>
 
@@ -817,329 +1181,330 @@
                 <div class="company-marker" style="top: 75%; left: 50%;" data-company="18">PÖ</div>
                 <div class="company-marker" style="top: 50%; left: 35%;" data-company="19">MU</div>
                 <div class="company-marker" style="top: 50%; left: 45%;" data-company="20">MOM</div>
-               
-               
             </div>
             
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-<section class="company-list">
-    <div class="company-list-header" id="companyListToggle">
-        <h2 class="section-title">Kiállító intézmények</h2>
-        <div class="arrow-icon down">▼</div>
-    </div>
-    <div class="company-list-content" id="companyListContent">
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="gepeszlog.png" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Mátészalkai Szakképzési Centrum Gépészeti Technikum és Kollégium</h3>
-                <p>Mátészalka, Kölcsey u. 12, 4700.</p>
-                <div class="company-contact">
-                    <p>Fejér Gábor Zoltán | +36 44 500 185 | mszgepesz@gmail.com</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://gepeszeti.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="derilogo.png" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Mátészalkai SzC Déri Miksa Technikum, Szakképző Iskola és Kollégium</h3>
-                <p>4702 Mátészalka, Baross László utca 9-11.</p>
-                <div class="company-contact">
-                    <p>Májer János Zsolt | +36 44 312 657 | mszc.derimiksa@gmail.com</p>
-                </div>
-            </div>
-            <div class="company-flyer">
+        </section>
         
-                <a href="https://derinet.edu.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
+        <section class="company-list">
+            <div class="company-list-header" id="companyListToggle">
+                <h2 class="section-title">Kiállító intézmények</h2>
+                <div class="arrow-icon down">▼</div>
             </div>
-        </div>
+            <div class="company-list-content" id="companyListContent">
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="gepeszlog.png" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Mátészalkai Szakképzési Centrum Gépészeti Technikum és Kollégium</h3>
+                        <p>Mátészalka, Kölcsey u. 12, 4700.</p>
+                        <div class="company-contact">
+                            <p>Fejér Gábor Zoltán | +36 44 500 185 | mszgepesz@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://msz.gepeszeti.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="derilogo.png" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Mátészalkai SzC Déri Miksa Technikum, Szakképző Iskola és Kollégium</h3>
+                        <p>4702 Mátészalka, Baross László utca 9-11.</p>
+                        <div class="company-contact">
+                            <p>Máyer János Zsolt | +36 44 312 657 | mszc.derimiksa@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://derinet.edu.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="budailog.png" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Mátészalkai SzC Budai Nagy Antal Technikum és Szakgimnázium</h3>
+                        <p>4320 Nagykálló Korányi Frigyes út 27.</p>
+                        <div class="company-contact">
+                            <p>Szabóné Lipkovics Ildikó | +36 42 263 104 | lipkovicsildiko@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://bnaszki.edu.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="balog.png" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Északi ASzc Baross László Mezőgazdasági Technikum, Szakképző Iskola és Kollégium</h3>
+                        <p>4700 Mátészalka, Baross László út 12-14.</p>
+                        <div class="company-contact">
+                            <p>Kovács István | 30/465-37-54 | baross.titkarsag@easzc.hu</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://barossmg.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="MClogo.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>McDonald's</h3>
+                        <p>Mátészalka, Alkotmány út 1/A, 4700.</p>
+                        <div class="company-contact">
+                            <p>Kis Szabó | munka@kisszabo.hu</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://www.mcdonalds.com/hu/hu-hu.html" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="Nobilis.webp" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Nobilis Első Hazai Zrt.</h3>
+                        <p>Mátészalka, Almáskert u. 14, 4700</p>
+                        <div class="company-contact">
+                            <p>Novák Tiborné | +36 30 653 8320 | webshop@nobilis.hu </p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://www.nobilis.hu/hu" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="relog.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Rendőrség</h3>
+                        <p></p>
+                        <div class="company-contact">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://www.police.hu/hu/ugyintezes/szerv/orszagos-rendor-fokapitanysag/szabolcs-szatmar-bereg-varmegyei-rendor-11" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="bvlogo.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Büntetés-Vágrehajtás</h3>
+                        <p></p>
+                        <div class="company-contact">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://bv.gov.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="momlogo.png" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>MOM Zrt.</h3>
+                        <p>4700 Mátészalka, Ipari út 16.</p>
+                        <div class="company-contact">
+                            <p>HEGYI  Tamás | +36 30 206 5879 | info@momzrt.hu</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://www.momzrt.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="relog.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Tűzoltóság</h3>
+                        <p></p>
+                        <div class="company-contact">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://szabolcs.katasztrofavedelem.hu/25439/hivatasos-tuzolto-parancsnoksag" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="relog.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Hoya Zrt.</h3>
+                        <p>Mátészalka, Ipari út 18, 4700.</p>
+                        <div class="company-contact">
+                            <p>Jens Kussat | (06 44) 418 200 | HMHU-hoya@hoya.hu</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://www.hoyavision.com/hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="relog.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Hungária Zrt. Mátészalkai Tejüzeme</h3>
+                        <p>Mátészalka, Jármi út 24.</p>
+                        <div class="company-contact">
+                            <p>Szautner Péter |  06 40 350 350 | vevoszolgalat@frieslandcampina.com</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://www.pottyos.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="relog.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>PARMEN Konzervipari Zrt.</h3>
+                        <p>4722 Nyírmeggyes, Fehér tag 1171/1.</p>
+                        <div class="company-contact">
+                            <p>Széll István| +36 44 509 036 | parmenkonzerv@parmen.hu</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://www.parmen.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="relog.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>MSG Kft.</h3>
+                        <p>4700 Mátészalka, Jármi út 55.</p>
+                        <div class="company-contact">
+                            <p>Keresztes László Mihály | +36/44/500-860 | msgkft@msgkft.com</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="http://msgkft.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="relog.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Carl Zeiss Vision Hungary Kft.</h3>
+                        <p>Mátészalka, Ernst Abbe utca 1-2, 4700.</p>
+                        <div class="company-contact">
+                            <p>Karaffa Róbert | (06 44) 501 200 | info@alpha.hu</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://www.zeiss.hu/corporate/home.html" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="relog.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>munka.hu</h3>
+                        <p>4700 Mátészalka, Jármi utca 2.</p>
+                        <div class="company-contact">
+                            <p>Kovács Zoltán | 44/500-622 | mateszalka@szabolcs.gov.hu</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://munka.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="relog.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Esze Tamás Gimnázium</h3>
+                        <p> Mátészalka u 4700, Kazinczy u. 7, 4700.</p>
+                        <div class="company-contact">
+                            <p>Bétéri Zoltán | (06 44) 502 625 | eszegimi@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://eszetamas.edu.hu/" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo">
+                        <img src="relog.jpg" alt="Rendőrség logó">
+                    </div>
+                    <div class="company-details">
+                        <h3>Szatmár Optikai Kft.</h3>
+                        <p>Mátészalka, Curtis utca 1, 4700</p>
+                        <div class="company-contact">
+                            <p>Mérész Attila | (06 44) 500 915 | attila.marton@szatmaroptika.hu</p>
+                        </div>
+                    </div>
+                    <div class="company-flyer">
+                        <a href="https://www.ceginformacio.hu/cr9316239418" target="_blank">
+                            <div class="flyer-icon">💼</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="budailog.png" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Mátészalkai SzC Budai Nagy Antal Technikum és Szakgimnázium</h3>
-                <p>4320 Nagykálló Korányi Frigyes út 27.</p>
-                <div class="company-contact">
-                    <p>Szabóné Lipkovics Ildikó | +36 42 263 104 | lipkovicsildiko@gmail.com                    </p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://bnaszki.edu.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="balog.png" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Északi ASzc Baross László Mezőgazdasági Technikum, Szakképző Iskola és Kollégium</h3>
-                <p>4700 Mátészalka, Baross László út 12-14.</p>
-                <div class="company-contact">
-                    <p>Kovács István | 30/465-37-54 | baross.titkarsag@easzc.hu</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://barossmg.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="MClogo.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>McDonald's</h3>
-                <p>Mátészalka, Alkotmány út 1/A, 4700.</p>
-                <div class="company-contact">
-                    <p>Kis Szabó | munka@kisszabo.hu</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://www.mcdonalds.com/hu/hu-hu.html" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="Nobilis.webp" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Nobilis Első Hazai Zrt.</h3>
-                <p>Mátészalka, Almáskert u. 14, 4700</p>
-                <div class="company-contact">
-                    <p>Novák Tiborné | +36 30 653 8320 | webshop@nobilis.hu </p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://www.nobilis.hu/hu" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="relog.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Rendőrség</h3>
-                <p></p>
-                <div class="company-contact">
-                    <p></p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://www.police.hu/hu/ugyintezes/szerv/orszagos-rendor-fokapitanysag/szabolcs-szatmar-bereg-varmegyei-rendor-11" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="bvlogo.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Büntetés-Vágrehajtás</h3>
-                <p></p>
-                <div class="company-contact">
-                    <p></p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://bv.gov.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="momlogo.png" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>MOM Zrt.</h3>
-                <p>4700 Mátészalka, Ipari út 16.</p>
-                <div class="company-contact">
-                    <p>HEGYI  Tamás | +36 30 206 5879 | info@momzrt.hu</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://www.momzrt.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="relog.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Tűzoltóság</h3>
-                <p></p>
-                <div class="company-contact">
-                    <p></p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://szabolcs.katasztrofavedelem.hu/25439/hivatasos-tuzolto-parancsnoksag" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="relog.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Hoya Zrt.</h3>
-                <p>Mátészalka, Ipari út 18, 4700.</p>
-                <div class="company-contact">
-                    <p>Jens Kussat | (06 44) 418 200 | HMHU-hoya@hoya.hu</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://www.hoyavision.com/hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="relog.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Hungária Zrt. Mátészalkai Tejüzeme</h3>
-                <p>Mátészalka, Jármi út 24.</p>
-                <div class="company-contact">
-                    <p>Szautner Péter |  06 40 350 350 | vevoszolgalat@frieslandcampina.com</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://www.pottyos.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="relog.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>PARMEN Konzervipari Zrt.</h3>
-                <p>4722 Nyírmeggyes, Fehér tag 1171/1.</p>
-                <div class="company-contact">
-                    <p>Széll István| +36 44 509 036 | parmenkonzerv@parmen.hu</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://www.parmen.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="relog.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>MSG Kft.</h3>
-                <p>4700 Mátészalka, Jármi út 55.</p>
-                <div class="company-contact">
-                    <p>Keresztes László Mihály | +36/44/500-860 | msgkft@msgkft.com</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="http://msgkft.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="relog.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Carl Zeiss Vision Hungary Kft.</h3>
-                <p>Mátészalka, Ernst Abbe utca 1-2, 4700.</p>
-                <div class="company-contact">
-                    <p>Karaffa Róbert | (06 44) 501 200 | info@alpha.hu</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://www.zeiss.hu/corporate/home.html" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="relog.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>munka.hu</h3>
-                <p>4700 Mátészalka, Jármi utca 2.</p>
-                <div class="company-contact">
-                    <p>Kovács Zoltán | 44/500-622 | mateszalka@szabolcs.gov.hu</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://munka.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="relog.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Esze Tamás Gimnázium</h3>
-                <p> Mátészalka u 4700, Kazinczy u. 7, 4700.</p>
-                <div class="company-contact">
-                    <p>Bétéri Zoltán | (06 44) 502 625 | eszegimi@gmail.com</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://eszetamas.edu.hu/" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-        <div class="company-item">
-            <div class="company-logo">
-                <img src="relog.jpg" alt="Rendőrség logó">
-            </div>
-            <div class="company-details">
-                <h3>Szatmár Optikai Kft.</h3>
-                <p>Mátészalka, Curtis utca 1, 4700</p>
-                <div class="company-contact">
-                    <p>Mérész Attila | (06 44) 500 915 | attila.marton@szatmaroptika.hu</p>
-                </div>
-            </div>
-            <div class="company-flyer">
-                <a href="https://www.ceginformacio.hu/cr9316239418" target="_blank">
-                    <div class="flyer-icon">💼</div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+        <!-- Cég bemutatók -->
         <section class="company-showcase" id="company-1">
             <div class="showcase-header">
                 <div class="showcase-logo">DMT</div>
@@ -1157,7 +1522,6 @@
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
         
-
         <section class="company-showcase" id="company-2">
             <div class="showcase-header">
                 <div class="showcase-logo">GTK</div>
@@ -1174,381 +1538,71 @@
             
             <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
         </section>
-        <section class="company-showcase" id="company-3">
-            <div class="showcase-header">
-                <div class="showcase-logo">BNA</div>
-                <div class="showcase-details">
-                    <h2>Mátészalkai SzC Budai Nagy Antal Technikum és Szakgimnázium.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="bd1.jpg" alt="Kép 1">
-                <img src="bd2.jpg" alt="Kép 2">
-                <img src="bd3.jpg" alt="Kép 3">
-            </div>
-            
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-4">
-            <div class="showcase-header">
-                <div class="showcase-logo">ETG</div>
-                <div class="showcase-details">
-                    <h2>Esze Tamás Gimnázium.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="sze1.jpg" alt="Kép 1">
-                <img src="sze2.jpg" alt="Kép 2">
-                <img src="sze3.jpg" alt="Kép 3">
-            </div>
-            
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-5">
-            <div class="showcase-header">
-                <div class="showcase-logo">SO</div>
-                <div class="showcase-details">
-                    <h2>Szatmár Optikai Kft.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="sza1.jpg" alt="Kép 1">
-                <img src="sza2.jpg" alt="Kép 2">
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-<p>
-Igen, a <strong>Szatmár Optikai Kft.</strong> Mátészalkán jelenleg is keres munkavállalókat. 
-A legutóbbi hirdetésben <strong>IT specialista</strong> pozícióra várják a jelentkezőket.
-<br><h3>Elérhető pozíció:</h3><br>
-● IT specialista – informatikai rendszerek karbantartása, támogatás, hálózatfelügyelet
-</p>
-
-            
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-6">
-            <div class="showcase-header">
-                <div class="showcase-logo">N</div>
-                <div class="showcase-details">
-                    <h2>Nobilis.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="no1.jpg" alt="Kép 1">
-                <img src="no2.jpg" alt="Kép 2">
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-<p>
-Jelenleg is elérhetőek munkalehetőségek. A cég folyamatosan keres új munkatársakat különböző pozíciókba.
-<br><h3>Elérhető pozíciók:</h3><br>
-● Élelmiszeripari operátor (betanított munkakör, többműszakos munkarend)<br>
-● Karbantartó / Gépüzemeltető (önálló munkavégzés, hibakeresés és javítás)
-<br><h3>Amit kínálnak:</h3><br>
-● Versenyképes fizetés<br>
-● Stabil, hosszú távú munka<br>
-● Fejlődési és előrelépési lehetőség<br>
-● Támogató, fiatalos csapat
-<br><h3>Elvárások:</h3><br>
-● Minimum középfokú végzettség<br>
-● Fizikai terhelhetőség<br>
-● Önálló munkavégzés<br>
-● Elkötelezettség és megbízhatóság
-</p>
-
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-7">
-            <div class="showcase-header">
-                <div class="showcase-logo">R</div>
-                <div class="showcase-details">
-                    <h2>Rendőrség.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="re1.jpg" alt="Kép 1">
-                <img src="re2.jpg" alt="Kép 2">
-                <img src="re3.jpg" alt="Kép 3">
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-<p>
-Álláshirdetéseken keresztül lehet érdeklődni. A rendvédelmi területen általánosan elérhető szakirányok a következők:
-<br><h3>Elérhető szakirányok:</h3><br>
-● Rendőr – középiskolai érettségi és megfelelő képzés szükséges<br>
-● Bűnügyi nyomozó – speciális képzés, előny lehet jogi vagy kriminalisztikai háttér<br>
-● Közlekedési rendőr – balesetek kivizsgálása és közlekedési szabályok betartatása<br>
-● Speciális szakértők – pszichológus, jogász, IT- vagy kriminalisztikai szakember
-<br><h3>További információ:</h3><br>
-Aktuális állások megtalálhatók a Magyar Rendőrség és az ÁSZK hivatalos weboldalán, 
-valamint a Mátészalkai Rendőrkapitányságnál.
-</p>
-
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-8">
-            <div class="showcase-header">
-                <div class="showcase-logo">BLM</div>
-                <div class="showcase-details">
-                    <h2>Északi ASzc Baross László Mezőgazdasági Technikum, Szakképző Iskola és Kollégium.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="ba1.jpg" alt="Kép 1">
-                <img src="ba2.jpg" alt="Kép 2">
-            </div>
-            
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-9">
-            <div class="showcase-header">
-                <div class="showcase-logo">H</div>
-                <div class="showcase-details">
-                    <h2>Hoya.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="ho1.jpg" alt="Kép 1">
-                <img src="ho2.jpg" alt="Kép 2">
-                <img src="ho3.jpg" alt="Kép 3">
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-            <p>A cég több szakterületen keres munkatársakat, pályakezdők jelentkezését is várják.<br><h3>Elérhető pozíciók:</h3><br>●Gépészmérnök<br>●Logisztikai asszisztens<br>●Programozó / Szoftverfejlesztő<br>●HR asszisztens<br>●Termékmenedzser asszisztens</p>
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-10">
-            <div class="showcase-header">
-                <div class="showcase-logo">RK</div>
-                <div class="showcase-details">
-                    <h2>PARMEN Konzervipari Zrt.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="pa1.jpg" alt="Kép 1">
-                <img src="pa2.jpg" alt="Kép 2">
-                <img src="pa3.jpg" alt="Kép 3">
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-<p>
-Jelenleg is elérhetőek munkalehetőségek. A cég folyamatosan keres új munkatársakat különböző pozíciókba.
-<br><h3>Elérhető pozíciók:</h3><br>
-● Géplakatos – gépek karbantartása és javítása<br>
-● Villanyszerelő – elektromos rendszerek telepítése és karbantartása<br>
-● Gyártásközi ellenőr – a gyártás minőségének ellenőrzése<br>
-● Raktáros – árukészlet kezelése és raktári adminisztráció
-<br><h3>Elvárások:</h3><br>
-● Középfokú végzettség<br>
-● Három műszakos munkarend vállalása<br>
-● Előnyt jelent élelmiszeripari tapasztalat
-<br><h3>Amit kínálnak:</h3><br>
-● Stabil, hosszú távú munka<br>
-● Versenyképes fizetés<br>
-● Cafetéria és vállalati buszjárat<br>
-● Kihívásokkal teli, felelősségteljes feladatok
-</p>
-
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-11">
-            <div class="showcase-header">
-                <div class="showcase-logo">BV</div>
-                <div class="showcase-details">
-                    <h2>Büntetés-Vágrehajtás.</h2>
-                </div>
-            </div>
-           <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-<p>
-Lehetőség van informatikusként elhelyezkedni (megfelelő végzettséggel).
-<br><h3>Pozíció:</h3><br>
-● Informatikus – informatikai rendszerek kezelése, üzemeltetése és támogatása
-<br><h3>Felvételi folyamat:</h3><br>
-● Előfeltétel: megfelelő végzettség (informatikai végzettség előny)<br>
-● Alkalmassági vizsgák: 4 vizsgálatból álló alkalmassági teszt<br>
-● Ezt követi többlépcsős felvételi eljárás (interjúk, gyakorlati feladatok)
-</p>
-
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-
-        <section class="company-showcase" id="company-12">
-            <div class="showcase-header">
-                <div class="showcase-logo">T</div>
-                <div class="showcase-details">
-                    <h2>Tűzöltóság.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="tu1.jpg" alt="Kép 1">
-                <img src="tu2.jpg" alt="Kép 2">
-                <img src="tu3.jpg" alt="Kép 3">
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-<p>
-Jelenleg nincs nyilvános álláshirdetés, de a pozíciók időről időre változnak. 
-Érdemes közvetlenül érdeklődni a kapitányságnál.
-<br><h3>Általános pozíciók:</h3><br>
-● Beosztott tűzoltó – középfokú végzettség és Tűzoltó II. részszakképesítés szükséges (5 hónapos képzés, rendvédelmi alapozó modul)<br>
-● Tűzoltó tiszti pozíciók – érettségi után a Nemzeti Közszolgálati Egyetem BSc/MSc képzésein keresztül
-</p>
-
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-13">
-            <div class="showcase-header">
-                <div class="showcase-logo">MSG</div>
-                <div class="showcase-details">
-                    <h2>MSG Kft.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="msg1.jpg" alt="Kép 1">
-                <img src="msg2.jpg" alt="Kép 2">
-                <img src="msg3.jpg" alt="Kép 3">
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-            <p>A Mátészalkai Szerelvénygyártó Kft. (MSG Kft.) jelenleg több munkakörbe is keres munkavállalókat.A cég versenyképes fizetést biztosít, valamint támogató, családias munkahelyi légkört kínál. A jelentkezéshez előnyt jelent a szakmai tapasztalat, de pályakezdők jelentkezését is szívesen várják.
-<br><h3>Elérhető pozíciók:</h3><br>●Esztergályos<br>●CNC esztergályos<br>●Fémfestő<br>●Lakatos<br>●Termékfejlesztő mérnök</p>
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-14">
-            <div class="showcase-header">
-                <div class="showcase-logo">CZH</div>
-                <div class="showcase-details">
-                    <h2>Carl Zeiss Vision Hungary Kft.</h2>
-                </div>
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-            <p>Nyáron is van néhány lehetőség, például raktári munka.
-El lehet helyezkedni; a szabad pozíciók elérhetők az interneten vagy a Munkalandon keresztül.</p>
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-15">
-            <div class="showcase-header">
-                <div class="showcase-logo">RH</div>
-                <div class="showcase-details">
-                    <h2>Rendezvény helyszíne.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="Színpad1.jpg" alt="Kép 1">
-                <img src="Tömeg3.jpg" alt="Kép 2">
-                <img src="Tömeg1.jpg" alt="Kép 3">
-            </div>
-            
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-16">
-            <div class="showcase-header">
-                <div class="showcase-logo">R</div>
-                <div class="showcase-details">
-                    <h2>Rendőrség.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="rek1.jpg" alt="Kép 1">
-                <img src="rek2.jpg" alt="Kép 2">
-                <img src="rek3.jpg" alt="Kép 3">
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-<p>
-Álláshirdetéseken keresztül lehet érdeklődni. A rendvédelmi területen általánosan elérhető szakirányok a következők:
-<br><h3>Elérhető szakirányok:</h3><br>
-● Rendőr – középiskolai érettségi és megfelelő képzés szükséges<br>
-● Bűnügyi nyomozó – speciális képzés, előny lehet jogi vagy kriminalisztikai háttér<br>
-● Közlekedési rendőr – balesetek kivizsgálása és közlekedési szabályok betartatása<br>
-● Speciális szakértők – pszichológus, jogász, IT- vagy kriminalisztikai szakember
-<br><h3>További információ:</h3><br>
-Aktuális állások megtalálhatók a Magyar Rendőrség és az ÁSZK hivatalos weboldalán, 
-valamint a Mátészalkai Rendőrkapitányságnál.
-</p>
-
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-17">
-            <div class="showcase-header">
-                <div class="showcase-logo">Mc</div>
-                <div class="showcase-details">
-                    <h2>McDonald's.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="mc1.jpg" alt="Kép 1">
-                <img src="mc2.jpg" alt="Kép 2">
-                <img src="mc3.jpg" alt="Kép 3">
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-            <p>Igen, az étteremben jelenleg is elérhetőek munkalehetőségek, ami több pozícióra keres munkavállalókat.<br><h3>Elérhető pozíciók:</h3><br>●Éttermunkatárs<br>●Éjszakás dolgozó<br>●Műszakvezető<br><h3>Juttatások:</h3><br>●Bruttó 1 900 Ft/óra + műszak- és ünnepnapi pótlék<br>●Ingyenes munkaruha, személyzeti fogyasztás, 20% vásárlási kedvezmény<br>●Rugalmas munkaidő, hosszútávú, bejelentett munka<br>●Bónuszok és karrierlehetőség
-            <br><h3>Elvárások:</h3><br>●Minimum középiskolai végzettség<br>●Rugalmasság, elkötelezettség, jó kommunikáció<br>●Tanulási hajlandóság; vendéglátásban szerzett tapasztalat előny, de nem feltétel</p>
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        <section class="company-showcase" id="company-18">
-            <div class="showcase-header">
-                <div class="showcase-logo">HMT</div>
-                <div class="showcase-details">
-                    <h2>Hungária Zrt. Mátészalkai Tejüzeme.</h2>
-                </div>
-            </div>
-            
-            <div class="showcase-gallery">
-                <img src="po1.jpg" alt="Kép 1">
-                <img src="po2.jpg" alt="Kép 2">
-                <img src="po3.jpg" alt="Kép 3">
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-<p>
-A híres Pöttyös Túró Rudi is készül itt, és jelenleg is elérhetőek munkalehetőségek. 
-A cég folyamatosan keres új munkatársakat különböző pozíciókba.
-<br><h3>Elérhető pozíciók:</h3><br>
-● Élelmiszeripari gépkezelő – gépek kezelése, beállítása, karbantartása<br>
-● Betanított munkás – termelés támogatása, csomagolás<br>
-● Karbantartó – gépek karbantartása, javítása<br>
-● Raktáros – árukészlet kezelése, raktári adminisztráció
-<br><h3>Amit kínálnak:</h3><br>
-● Stabil, hosszú távú munka<br>
-● Versenyképes fizetés<br>
-● Fejlődési lehetőség<br>
-● Támogató csapat
-<br><h3>Elvárások:</h3><br>
-● Középfokú végzettség<br>
-● Fizikai terhelhetőség<br>
-● Önálló munkavégzés<br>
-● Elkötelezettség és megbízhatóság
-</p>
-
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
-        </section><section class="company-showcase" id="company-20">
-            <div class="showcase-header">
-                <div class="showcase-logo">MOM</div>
-                <div class="showcase-details">
-                    <h2>MOM Zrt.</h2>
-                </div>
-            </div>
-            <h1>Van-e valamilyen munkalehetőség, ha igen milyen szakirányban?</h1>
-            <p>Jelenleg vannak nyitott munkalehetőségek, elsősorban gépész szakirányban (forgácsolás) és az optikusi területen keresnek szakembereket. Informatikai végzettséggel is van lehetőség elhelyezkedni, azonban ez jelenleg nehezebb, mivel ezen a területen nincs aktív felvétel. 
-A munkahely támogató és családias légkört biztosít, valamint versenyképes bérezést kínál.</p>
-            <a href="#" class="back-to-top">Vissza az oldal tetejére</a>
-        </section>
+        
+        <!-- További cég bemutatók... -->
+        
     </div>
     
-   
+    <!-- Média megjelenések szekció -->
+    <section class="media-appearances">
+        <div class="container">
+            <h2 class="section-title">Média megjelenések</h2>
+            <div class="media-content">
+                <div class="media-intro">
+                    <p>Az 1. Mátészalkai SzakmaFeszt nagy érdeklődést keltett a helyi és regionális médiában. 
+                    Itt találhatók a rendezvényről készült videók, riportok és cikkek.</p>
+                </div>
+                
+                <div class="media-grid">
+                    <a href="https://www.facebook.com/mateszalka.fenyvarosa/posts/122229126476089394/" class="media-item" target="_blank">
+                        <div class="media-image">
+                            <div class="media-platform facebook">Facebook</div>
+                            <img src="media-facebook.jpg" alt="Facebook poszt a SzakmaFesztről">
+                        </div>
+                        <div class="media-info">
+                            <h3>Facebook bejegyzés</h3>
+                            <p>Mátészalka Fényvarosa Facebook oldalán megjelent bejegyzés a SzakmaFesztről</p>
+                            <span class="media-date">2025. szeptember 12.</span>
+                            <div class="media-link">Kattints a megtekintéshez →</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://mateszalka-fenyvarosa.hu/szakmafest-2025-ahol-a-jovo-formalodott/" class="media-item" target="_blank">
+                        <div class="media-image">
+                            <div class="media-platform website">Weboldal</div>
+                            <img src="media-website.jpg" alt="SzakmaFeszt cikk">
+                        </div>
+                        <div class="media-info">
+                            <h3>Szakmafest 2025 – ahol a jövő formálódott</h3>
+                            <p>Részletes cikk a rendezvényről a Mátészalka Fényvarosa weboldalán</p>
+                            <span class="media-date">2025. szeptember 12.</span>
+                            <div class="media-link">Kattints a megtekintéshez →</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://youtu.be/deGqEm1qD_A?si=XFtQF7HfXSN7zDkI" class="media-item" target="_blank">
+                        <div class="media-image">
+                            <div class="media-platform youtube">YouTube</div>
+                            <img src="media-youtube.jpg" alt="YouTube videó a SzakmaFesztről">
+                        </div>
+                        <div class="media-info">
+                            <h3>YouTube videó</h3>
+                            <p>Videóriport a SzakmaFeszt eseményeiről és programjairól</p>
+                            <span class="media-date">2025. szeptember 12.</span>
+                            <div class="media-link">Kattints a megtekintéshez →</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <a href="#" id="backToTop">↑</a>
     <div class="marker-preview" id="markerPreview">
-  <img src="" alt="Cég előnézet">
-</div>
+        <img src="" alt="Cég előnézet">
+    </div>
+    
     <script>
-        
         document.addEventListener('DOMContentLoaded', function() {
             let slideIndex = 0;
             const slides = document.querySelectorAll('.slide');
@@ -1627,24 +1681,25 @@ A munkahely támogató és családias légkört biztosít, valamint versenyképe
                     }
                 });
             });
-const lightbox = document.createElement('div');
-lightbox.id = 'lightbox';
-document.body.appendChild(lightbox);
-
-const lightboxImg = document.createElement('img');
-lightbox.appendChild(lightboxImg);
-
-lightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
-
-document.querySelectorAll('.showcase-gallery img').forEach(img => {
-    img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-    });
-});
-
+            
+            const lightbox = document.createElement('div');
+            lightbox.id = 'lightbox';
+            document.body.appendChild(lightbox);
+            
+            const lightboxImg = document.createElement('img');
+            lightbox.appendChild(lightboxImg);
+            
+            lightbox.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+            });
+            
+            document.querySelectorAll('.showcase-gallery img').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightbox.style.display = 'flex';
+                });
+            });
+            
             const backToTopBtn = document.getElementById('backToTop');
             
             window.addEventListener('scroll', function() {
@@ -1666,68 +1721,68 @@ document.querySelectorAll('.showcase-gallery img').forEach(img => {
                     window.scrollTo({top: 0, behavior: 'smooth'});
                 });
             });
+            
+            // Cég lista kibontása
+            const companyListToggle = document.getElementById('companyListToggle');
+            const companyListContent = document.getElementById('companyListContent');
+            const arrowIcon = companyListToggle.querySelector('.arrow-icon');
+            
+            companyListToggle.addEventListener('click', function() {
+                companyListContent.classList.toggle('expanded');
+                arrowIcon.classList.toggle('down');
+                arrowIcon.classList.toggle('up');
+            });
+            
+            // Marker előnézetek
+            const preview = document.getElementById('markerPreview');
+            const previewImg = preview.querySelector('img');
+            
+            markers.forEach(marker => {
+                marker.addEventListener('mouseenter', function(e) {
+                    const companyId = this.getAttribute('data-company');
+                    
+                    const images = {
+                        1: "bemutató2.jpg",
+                        2: "gepesz.jpg",
+                        3: "bd.jpg",
+                        4: "sze.jpg",
+                        5: "sza.jpg",
+                        6: "no.jpg",
+                        7: "re.jpg",
+                        8: "ba.jpg",
+                        9: "ho.jpg",
+                        10: "pa.jpg",
+                        11: "ve.jpg",
+                        12: "tu.jpg",
+                        13: "msg.jpg",
+                        14: "ze.jpg",
+                        15: "szp.jpg",
+                        16: "re2.jpg",
+                        17: "mc.jpg",
+                        18: "pö.jpg",
+                        19: "mu.jpg",
+                        20: "mom.jpg",
+                    };
+                    
+                    if (images[companyId]) {
+                        previewImg.src = images[companyId];
+                        preview.style.display = "block";
+                        
+                        preview.style.top = (e.clientY + 15) + "px";
+                        preview.style.left = (e.clientX + 15) + "px";
+                    }
+                });
+                
+                marker.addEventListener('mousemove', function(e) {
+                    preview.style.top = (e.clientY + 15) + "px";
+                    preview.style.left = (e.clientX + 15) + "px";
+                });
+                
+                marker.addEventListener('mouseleave', function() {
+                    preview.style.display = "none";
+                });
+            });
         });
-          const markers = document.querySelectorAll('.company-marker');
-  const preview = document.getElementById('markerPreview');
-  const previewImg = preview.querySelector('img');
-
-  markers.forEach(marker => {
-    marker.addEventListener('mouseenter', function(e) {
-      const companyId = this.getAttribute('data-company');
-
-      const images = {
-        1: "bemutató2.jpg",
-        2: "gepesz.jpg",
-        3: "bd.jpg",
-        4: "sze.jpg",
-        5: "sza.jpg",
-        6: "no.jpg",
-        7: "re.jpg",
-        8: "ba.jpg",
-        9: "ho.jpg",
-        10: "pa.jpg",
-        11: "ve.jpg",
-        12: "tu.jpg",
-        13: "msg.jpg",
-        14: "ze.jpg",
-        15: "szp.jpg",
-        16: "re2.jpg",
-        17: "mc.jpg",
-        18: "pö.jpg",
-        19: "mu.jpg",
-        20: "mom.jpg",
-        
-      };
-
-      if (images[companyId]) {
-        previewImg.src = images[companyId];
-        preview.style.display = "block";
-
-        preview.style.top = (e.clientY + 15) + "px";
-        preview.style.left = (e.clientX + 15) + "px";
-      }
-    });
-
-    marker.addEventListener('mousemove', function(e) {
-      preview.style.top = (e.clientY + 15) + "px";
-      preview.style.left = (e.clientX + 15) + "px";
-    });
-
-    marker.addEventListener('mouseleave', function() {
-      preview.style.display = "none";
-    });
-  });
-document.addEventListener('DOMContentLoaded', function() {
-    const companyListToggle = document.getElementById('companyListToggle');
-    const companyListContent = document.getElementById('companyListContent');
-    const arrowIcon = companyListToggle.querySelector('.arrow-icon');
-
-    companyListToggle.addEventListener('click', function() {
-        companyListContent.classList.toggle('expanded');
-        arrowIcon.classList.toggle('down');
-        arrowIcon.classList.toggle('up');
-    });
-});
     </script>
 </body>
 </html>
